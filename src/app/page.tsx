@@ -40,7 +40,10 @@ export default function Home() {
               ["Operaciones broadcast", "Coordinación de procesos, recursos y estándares para transmisiones consistentes."],
               ["Producción REMI", "Experiencia en infraestructura y colaboración para producción remota eficiente."],
               ["Liderazgo de equipos", "Alineación de perfiles creativos, editoriales y técnicos hacia un mismo resultado."],
-            ].map(([title, copy], index) => <motion.article key={title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .3 }} transition={{ delay: index * .07 }} className="bg-[#111417] p-7"><span className="font-mono text-xs text-white/25">0{index + 1}</span><h3 className="mt-12 text-xl font-medium">{title}</h3><p className="mt-3 text-sm leading-6 text-white/50">{copy}</p></motion.article>)}
+            ].map(([title, copy], index) => <motion.article key={title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .3 }} transition={{ delay: index * .07 }} className="group overflow-hidden bg-[#111417]">
+              {index === 0 && <div className="relative h-44 overflow-hidden"><Image src="/LFDTV.jpeg" alt="Isaí Rodríguez coordinando una producción televisiva en vivo desde la cabina" fill sizes="(min-width: 768px) 35vw, 100vw" className="object-cover transition duration-700 group-hover:scale-[1.04]" /><div className="absolute inset-0 bg-gradient-to-t from-[#111417] via-transparent to-transparent" /><span className="absolute bottom-4 left-5 rounded-full border border-[#ff4d00]/45 bg-black/60 px-3 py-1 font-mono text-[9px] uppercase tracking-[.18em] text-[#ff9a72] backdrop-blur-sm">Live direction</span></div>}
+              <div className="p-7"><span className="font-mono text-xs text-white/25">0{index + 1}</span><h3 className={index === 0 ? "mt-7 text-xl font-medium" : "mt-12 text-xl font-medium"}>{title}</h3><p className="mt-3 text-sm leading-6 text-white/50">{copy}</p></div>
+            </motion.article>)}
           </div>
         </div>
       </section>
