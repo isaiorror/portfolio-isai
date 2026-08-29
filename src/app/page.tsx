@@ -61,7 +61,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/20" />
               <div className="relative flex h-full min-h-80 flex-col justify-between p-8"><span className="w-fit rounded-full border border-[#ff4d00]/50 bg-black/55 px-3 py-1 font-mono text-[10px] uppercase tracking-[.2em] text-[#ff9a72] backdrop-blur-sm">Centro Nacional de Producción</span><strong className="font-mono text-7xl text-white/75 transition group-hover:text-white">CNP Jalisco</strong></div>
             </div>
-            <div className="flex flex-col justify-between p-8 md:p-12"><div><p className="font-mono text-xs uppercase tracking-[.2em] text-white/35">TV Azteca · Operaciones broadcast</p><h3 className="mt-5 text-3xl font-medium tracking-tight md:text-4xl">De editor a productor de noticieros locales.</h3><p className="mt-6 max-w-xl leading-7 text-white/52">Participación en la implementación del tercer centro nacional de producción, promocionado de editor a productor en dos meses, produciendo noticieros para televisoras regionales.</p></div><div className="mt-12 flex flex-wrap gap-2">{["Producción", "REMI", "NDI", "Tricaster", "iNews"].map(tag => <span key={tag} className="border border-white/12 px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider text-white/45">{tag}</span>)}</div></div>
+            <div className="flex flex-col justify-between p-8 md:p-12"><div><p className="font-mono text-xs uppercase tracking-[.2em] text-white/35">TV Azteca · Operaciones broadcast</p><h3 className="mt-5 text-3xl font-medium tracking-tight md:text-4xl">De editor a productor de noticieros locales.</h3><p className="mt-6 max-w-xl leading-7 text-white/52">Participación en la implementación del tercer centro nacional de producción, promocionado de editor a productor en dos meses, produciendo noticieros para televisoras regionales.</p></div><div className="mt-12 flex flex-wrap gap-2">{["Producción", "REMI", "NDI", "Tricaster"].map(tag => <span key={tag} className="border border-white/12 px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider text-white/45">{tag}</span>)}</div></div>
           </article>
 
           <div className="mt-6 grid gap-6 lg:grid-cols-3">
@@ -81,14 +81,19 @@ export default function Home() {
               </div>
             </motion.article>
 
-            <motion.article initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ delay: .08 }} className="flex min-h-[420px] flex-col justify-between border border-white/12 bg-[#0d1013] p-7">
-              <div>
-                <div className="flex items-center justify-between"><span className="font-mono text-[10px] uppercase tracking-[.2em] text-[#ff7540]">Contenido vertical 9:16</span><span className="font-mono text-xs text-white/25">02</span></div>
-                <h3 className="mt-12 text-3xl font-medium tracking-tight">HUBWELL Logistics</h3>
-                <p className="mt-3 text-sm font-medium text-white/70">Edición y adaptación de marca</p>
-                <p className="mt-6 leading-7 text-white/48">Edición en CapCut Pro a partir de material proporcionado por el cliente, incorporando música, captions y tratamiento visual alineado con su paleta de colores y tipografía.</p>
+            <motion.article initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ delay: .08 }} className="flex min-h-[420px] flex-col overflow-hidden border border-white/12 bg-[#0d1013]">
+              <div className="grid grid-cols-2 gap-px bg-white/10">
+                {["/hubwell-01.mp4", "/hubwell-02.mp4"].map((src, index) => <video key={src} className="aspect-[9/16] w-full bg-black object-contain" controls playsInline preload="metadata" aria-label={`Video vertical ${index + 1} editado para HUBWELL Logistics`}><source src={src} type="video/mp4" />Tu navegador no puede reproducir este video.</video>)}
               </div>
-              <div className="mt-10 border-t border-white/10 pt-5"><span className="font-mono text-xs text-white/35">ENTREGABLES</span><p className="mt-2 text-sm text-white/70">3 videos en formato 9:16</p></div>
+              <div className="flex flex-1 flex-col justify-between p-7">
+                <div>
+                  <div className="flex items-center justify-between"><span className="font-mono text-[10px] uppercase tracking-[.2em] text-[#ff7540]">Contenido vertical 9:16</span><span className="font-mono text-xs text-white/25">02</span></div>
+                  <h3 className="mt-8 text-3xl font-medium tracking-tight">HUBWELL Logistics</h3>
+                  <p className="mt-3 text-sm font-medium text-white/70">Edición y adaptación de marca</p>
+                  <p className="mt-6 leading-7 text-white/48">Edición en CapCut Pro a partir de material proporcionado por el cliente, incorporando música, captions y tratamiento visual alineado con los assets proporcionados por el cliente.</p>
+                </div>
+                <div className="mt-10 border-t border-white/10 pt-5"><span className="font-mono text-xs text-white/35">ENTREGABLES</span><p className="mt-2 text-sm text-white/70">3 videos en formato 9:16</p></div>
+              </div>
             </motion.article>
 
             <motion.article initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ delay: .16 }} className="flex min-h-[420px] flex-col justify-between border border-white/12 bg-[#0d1013] p-7">
