@@ -4,8 +4,9 @@ import { motion } from "framer-motion";
 
 const stats = [["10+", "años en producción audiovisual"], ["5+", "años en TV Azteca"], ["REMI", "producción remota"]];
 const capabilityImages = [
-  { src: "/LFDTV.jpeg", alt: "Isaí Rodríguez coordinando una producción televisiva en vivo desde la cabina", label: "Live direction" },
-  { src: "/tri.jpg", alt: "Consola Tricaster utilizada en operaciones broadcast", label: "Broadcast systems" },
+  { src: "/LFDTV.jpeg", alt: "Isaí Rodríguez coordinando una producción televisiva en vivo desde la cabina", label: "Live direction", imageClass: "object-cover" },
+  { src: "/tri.jpg", alt: "Consola Tricaster utilizada en operaciones broadcast", label: "Broadcast systems", imageClass: "object-cover" },
+  { src: "/diagrama.png", alt: "Diagrama del flujo de producción remota REMI desde una sede remota hasta distribución", label: "REMI workflow", imageClass: "object-contain p-2" },
 ];
 
 export default function Home() {
@@ -25,7 +26,7 @@ export default function Home() {
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-8 flex items-center gap-3"><span className="h-px w-10 bg-[#ff4d00]" /><p className="font-mono text-xs uppercase tracking-[0.28em] text-[#ff7540]">Broadcast Operations Leader</p></motion.div>
           <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="max-w-5xl text-[clamp(3.5rem,9vw,8.5rem)] font-semibold leading-[0.84] tracking-[-0.07em]">ISAÍ<br /><span className="text-outline">RODRÍGUEZ</span></motion.h1>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.35 }} className="mt-10 grid gap-8 border-t border-white/15 pt-7 md:grid-cols-[1fr_auto] md:items-end">
-            <p className="max-w-2xl text-base leading-7 text-white/62 md:text-lg">Lidero operaciones audiovisuales, equipos multidisciplinarios y producciónes en vivo y remotas.</p>
+            <p className="max-w-2xl text-base leading-7 text-white/62 md:text-lg">Lidero operaciones audiovisuales, equipos multidisciplinarios, producciónes en vivo y remotas.</p>
             <div className="flex flex-wrap gap-3"><a href="#proyectos" className="rounded-sm bg-[#ff4d00] px-6 py-3 text-sm font-semibold transition hover:bg-[#ff6425]">Explorar trabajo</a><a href="mailto:orror.isai@outlook.com" className="rounded-sm border border-white/20 px-6 py-3 text-sm font-semibold transition hover:border-white/50 hover:bg-white/5">Hablemos</a></div>
           </motion.div>
         </div>
@@ -45,7 +46,7 @@ export default function Home() {
               ["Producción REMI", "Experiencia en infraestructura y colaboración para producción remota eficiente."],
               ["Liderazgo de equipos", "Alineación de perfiles creativos, editoriales y técnicos hacia un mismo resultado."],
             ].map(([title, copy], index) => <motion.article key={title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .3 }} transition={{ delay: index * .07 }} className="group overflow-hidden bg-[#111417]">
-              {capabilityImages[index] && <div className="relative h-44 overflow-hidden"><Image src={capabilityImages[index].src} alt={capabilityImages[index].alt} fill sizes="(min-width: 768px) 35vw, 100vw" className="object-cover transition duration-700 group-hover:scale-[1.04]" /><div className="absolute inset-0 bg-gradient-to-t from-[#111417] via-transparent to-transparent" /><span className="absolute bottom-4 left-5 rounded-full border border-[#ff4d00]/45 bg-black/60 px-3 py-1 font-mono text-[9px] uppercase tracking-[.18em] text-[#ff9a72] backdrop-blur-sm">{capabilityImages[index].label}</span></div>}
+              {capabilityImages[index] && <div className="relative h-44 overflow-hidden bg-black"><Image src={capabilityImages[index].src} alt={capabilityImages[index].alt} fill sizes="(min-width: 768px) 35vw, 100vw" className={`${capabilityImages[index].imageClass} transition duration-700 group-hover:scale-[1.04]`} /><div className="absolute inset-0 bg-gradient-to-t from-[#111417] via-transparent to-transparent" /><span className="absolute bottom-4 left-5 rounded-full border border-[#ff4d00]/45 bg-black/60 px-3 py-1 font-mono text-[9px] uppercase tracking-[.18em] text-[#ff9a72] backdrop-blur-sm">{capabilityImages[index].label}</span></div>}
               <div className="p-7"><span className="font-mono text-xs text-white/25">0{index + 1}</span><h3 className={capabilityImages[index] ? "mt-7 text-xl font-medium" : "mt-12 text-xl font-medium"}>{title}</h3><p className="mt-3 text-sm leading-6 text-white/50">{copy}</p></div>
             </motion.article>)}
           </div>
@@ -73,11 +74,11 @@ export default function Home() {
               <div className="flex flex-1 flex-col justify-between p-7">
                 <div>
                   <div className="flex items-center justify-between"><span className="font-mono text-[10px] uppercase tracking-[.2em] text-[#ff7540]">Producción audiovisual</span><span className="font-mono text-xs text-white/25">01</span></div>
-                  <h3 className="mt-8 text-3xl font-medium tracking-tight">Tlajtoali</h3>
+                  <h3 className="mt-8 text-3xl font-medium tracking-tight">Tlajtoli 2026</h3>
                   <p className="mt-3 text-sm font-medium text-white/70">Dirección de transmisión · Producción · Cámara</p>
-                  <p className="mt-6 leading-7 text-white/48">Participación integral en la producción audiovisual, desde la dirección de transmisión y producción hasta la operación de cámara.</p>
+<p className="mt-6 leading-7 text-white/48">Participación integral en la producción audiovisual, participando en levantamiento de imágenes, director de transmisión, producción y editor de video final.</p>
                 </div>
-                <div className="mt-10 border-t border-white/10 pt-5"><span className="font-mono text-xs text-white/35">ENTREGABLES</span><p className="mt-2 text-sm text-white/70">1 video principal + 1 reel</p></div>
+                <div className="mt-10 border-t border-white/10 pt-5"><span className="font-mono text-xs text-white/35">ENTREGABLES</span><p className="mt-2 text-sm text-white/70">1 video principal + 1 reel + 1 transmisión a RRSS </p></div>
               </div>
             </motion.article>
 
@@ -87,12 +88,12 @@ export default function Home() {
               </div>
               <div className="flex flex-1 flex-col justify-between p-7">
                 <div>
-                  <div className="flex items-center justify-between"><span className="font-mono text-[10px] uppercase tracking-[.2em] text-[#ff7540]">Edicion para redes sociales 9:16</span><span className="font-mono text-xs text-white/25">02</span></div>
+                  <div className="flex items-center justify-between"><span className="font-mono text-[10px] uppercase tracking-[.2em] text-[#ff7540]">Edicion para redes sociales</span><span className="font-mono text-xs text-white/25">02</span></div>
                   <h3 className="mt-8 text-3xl font-medium tracking-tight">HUBWELL Logistics</h3>
                   <p className="mt-3 text-sm font-medium text-white/70">Edición y adaptación de marca</p>
-                  <p className="mt-6 leading-7 text-white/48">Edición en CapCut Pro a partir de material proporcionado por el cliente, incorporando música, captions y tratamiento visual alineado con los assets proporcionados por el cliente.</p>
+                  <p className="mt-6 leading-7 text-white/48">Edición en CapCut Pro a partir de material proporcionado por el cliente, incorporando música, captions y tratamiento visual alineado con los elementos que solicitan nuestros clientes.</p>
                 </div>
-                <div className="mt-10 border-t border-white/10 pt-5"><span className="font-mono text-xs text-white/35">ENTREGABLES</span><p className="mt-2 text-sm text-white/70">3 videos en formato 9:16</p></div>
+                <div className="mt-10 border-t border-white/10 pt-5"><span className="font-mono text-xs text-white/35">ENTREGABLES</span><p className="mt-2 text-sm text-white/70">Videos virales para RRSS</p></div>
               </div>
             </motion.article>
 
