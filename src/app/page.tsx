@@ -96,14 +96,19 @@ export default function Home() {
               </div>
             </motion.article>
 
-            <motion.article initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ delay: .16 }} className="flex min-h-[420px] flex-col justify-between border border-white/12 bg-[#0d1013] p-7">
-              <div>
-                <div className="flex items-center justify-between"><span className="font-mono text-[10px] uppercase tracking-[.2em] text-[#ff7540]">Narrativa musical</span><span className="font-mono text-xs text-white/25">03</span></div>
-                <h3 className="mt-12 text-3xl font-medium tracking-tight">Videoclip musical</h3>
-                <p className="mt-3 text-sm font-medium text-white/70">Edición de video</p>
-                <p className="mt-6 leading-7 text-white/48">Construcción del ritmo, selección de tomas y continuidad visual para articular la interpretación musical en una pieza audiovisual coherente.</p>
+            <motion.article initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ delay: .16 }} className="flex min-h-[420px] flex-col overflow-hidden border border-white/12 bg-[#0d1013]">
+              <div className="grid gap-px bg-white/10">
+                {["/cortinilla-01.mp4", "/cortinilla-02.mp4"].map((src, index) => <video key={src} className="aspect-video w-full bg-black object-contain" controls playsInline preload="metadata" aria-label={`Cortinilla musical ${index + 1} editada por Isaí Rodríguez`}><source src={src} type="video/mp4" />Tu navegador no puede reproducir este video.</video>)}
               </div>
-              <div className="mt-10 border-t border-white/10 pt-5"><span className="font-mono text-xs text-white/35">ROL</span><p className="mt-2 text-sm text-white/70">Editor</p></div>
+              <div className="flex flex-1 flex-col justify-between p-7">
+                <div>
+                  <div className="flex items-center justify-between"><span className="font-mono text-[10px] uppercase tracking-[.2em] text-[#ff7540]">Narrativa musical</span><span className="font-mono text-xs text-white/25">03</span></div>
+                  <h3 className="mt-8 text-3xl font-medium tracking-tight">Videoclip musical</h3>
+                  <p className="mt-3 text-sm font-medium text-white/70">Edición de video</p>
+                  <p className="mt-6 leading-7 text-white/48">Construcción del ritmo, selección de tomas y continuidad visual para articular la interpretación musical en una pieza audiovisual coherente.</p>
+                </div>
+                <div className="mt-10 border-t border-white/10 pt-5"><span className="font-mono text-xs text-white/35">ROL</span><p className="mt-2 text-sm text-white/70">Editor</p></div>
+              </div>
             </motion.article>
           </div>
         </div>
