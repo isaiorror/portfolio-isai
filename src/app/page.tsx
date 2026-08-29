@@ -65,14 +65,20 @@ export default function Home() {
           </article>
 
           <div className="mt-6 grid gap-6 lg:grid-cols-3">
-            <motion.article initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} className="flex min-h-[420px] flex-col justify-between border border-white/12 bg-[#0d1013] p-7">
-              <div>
-                <div className="flex items-center justify-between"><span className="font-mono text-[10px] uppercase tracking-[.2em] text-[#ff7540]">Producción audiovisual</span><span className="font-mono text-xs text-white/25">01</span></div>
-                <h3 className="mt-12 text-3xl font-medium tracking-tight">Tlajtoali</h3>
-                <p className="mt-3 text-sm font-medium text-white/70">Dirección de transmisión · Producción · Cámara</p>
-                <p className="mt-6 leading-7 text-white/48">Participación integral en la producción audiovisual, desde la dirección de transmisión y producción hasta la operación de cámara.</p>
+            <motion.article initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} className="flex min-h-[420px] flex-col overflow-hidden border border-white/12 bg-[#0d1013]">
+              <video className="aspect-video w-full bg-black object-contain" controls playsInline preload="metadata" aria-label="Video de la producción audiovisual Tlajtoali">
+                <source src="/tlajtoali-video.mp4" type="video/mp4" />
+                Tu navegador no puede reproducir este video.
+              </video>
+              <div className="flex flex-1 flex-col justify-between p-7">
+                <div>
+                  <div className="flex items-center justify-between"><span className="font-mono text-[10px] uppercase tracking-[.2em] text-[#ff7540]">Producción audiovisual</span><span className="font-mono text-xs text-white/25">01</span></div>
+                  <h3 className="mt-8 text-3xl font-medium tracking-tight">Tlajtoali</h3>
+                  <p className="mt-3 text-sm font-medium text-white/70">Dirección de transmisión · Producción · Cámara</p>
+                  <p className="mt-6 leading-7 text-white/48">Participación integral en la producción audiovisual, desde la dirección de transmisión y producción hasta la operación de cámara.</p>
+                </div>
+                <div className="mt-10 border-t border-white/10 pt-5"><span className="font-mono text-xs text-white/35">ENTREGABLES</span><p className="mt-2 text-sm text-white/70">1 video principal + 1 reel</p></div>
               </div>
-              <div className="mt-10 border-t border-white/10 pt-5"><span className="font-mono text-xs text-white/35">ENTREGABLES</span><p className="mt-2 text-sm text-white/70">1 video principal + 1 reel</p></div>
             </motion.article>
 
             <motion.article initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ delay: .08 }} className="flex min-h-[420px] flex-col justify-between border border-white/12 bg-[#0d1013] p-7">
