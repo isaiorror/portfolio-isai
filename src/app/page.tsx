@@ -1,7 +1,8 @@
 "use client";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
-const stats = [["10+", "años en producción"], ["5+", "años en TV Azteca"], ["REMI", "producción remota"]];
+const stats = [["10+", "años en producción audiovisual"], ["5+", "años en TV Azteca"], ["REMI", "producción remota"]];
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-8 flex items-center gap-3"><span className="h-px w-10 bg-[#ff4d00]" /><p className="font-mono text-xs uppercase tracking-[0.28em] text-[#ff7540]">Broadcast Operations Leader</p></motion.div>
           <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="max-w-5xl text-[clamp(3.5rem,9vw,8.5rem)] font-semibold leading-[0.84] tracking-[-0.07em]">ISAÍ<br /><span className="text-outline">RODRÍGUEZ</span></motion.h1>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.35 }} className="mt-10 grid gap-8 border-t border-white/15 pt-7 md:grid-cols-[1fr_auto] md:items-end">
-            <p className="max-w-2xl text-base leading-7 text-white/62 md:text-lg">Lidero operaciones audiovisuales complejas, equipos multidisciplinarios y producción remota para televisión e instituciones públicas.</p>
+            <p className="max-w-2xl text-base leading-7 text-white/62 md:text-lg">Lidero operaciones audiovisuales, equipos multidisciplinarios y producción remota.</p>
             <div className="flex flex-wrap gap-3"><a href="#proyectos" className="rounded-sm bg-[#ff4d00] px-6 py-3 text-sm font-semibold transition hover:bg-[#ff6425]">Explorar trabajo</a><a href="mailto:orror.isai@outlook.com" className="rounded-sm border border-white/20 px-6 py-3 text-sm font-semibold transition hover:border-white/50 hover:bg-white/5">Hablemos</a></div>
           </motion.div>
         </div>
@@ -48,8 +49,12 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 flex flex-wrap items-end justify-between gap-6"><div><p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-[#ff7540]">02 / Trayectoria</p><h2 className="text-4xl font-semibold tracking-[-0.04em] md:text-6xl">Experiencia que conecta.</h2></div><p className="max-w-sm text-sm leading-6 text-white/45">El portafolio crecerá con casos de estudio, evidencia visual y resultados medibles de cada operación.</p></div>
           <article className="group grid overflow-hidden border border-white/12 bg-[#0d1013] md:grid-cols-[1fr_1.2fr]">
-            <div className="relative min-h-72 overflow-hidden bg-[#11151a] p-8"><div className="absolute inset-0 opacity-30 broadcast-grid" /><div className="relative flex h-full flex-col justify-between"><span className="w-fit rounded-full border border-[#ff4d00]/40 bg-[#ff4d00]/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[.2em] text-[#ff7540]">Centro Nacional de Producción</span><strong className="font-mono text-7xl text-white/10 transition group-hover:text-[#ff4d00]/20">CNP</strong></div></div>
-            <div className="flex flex-col justify-between p-8 md:p-12"><div><p className="font-mono text-xs uppercase tracking-[.2em] text-white/35">TV Azteca · Operaciones broadcast</p><h3 className="mt-5 text-3xl font-medium tracking-tight md:text-4xl">De editor a productor de noticieros locales.</h3><p className="mt-6 max-w-xl leading-7 text-white/52">Participación en la implementación del tercer centro de producción remota y promoción a productor en dos meses, coordinando producción para televisoras regionales.</p></div><div className="mt-12 flex flex-wrap gap-2">{["Producción", "REMI", "NDI", "Tricaster", "iNews"].map(tag => <span key={tag} className="border border-white/12 px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider text-white/45">{tag}</span>)}</div></div>
+            <div className="relative min-h-80 overflow-hidden bg-[#11151a]">
+              <Image src="/IMG_20230606_190615.jpg" alt="Isaí Rodríguez operando equipo de producción en el Centro Nacional de Producción" fill sizes="(min-width: 768px) 45vw, 100vw" className="object-cover object-[45%_center] grayscale-[25%] transition duration-700 group-hover:scale-[1.03] group-hover:grayscale-0" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/20" />
+              <div className="relative flex h-full min-h-80 flex-col justify-between p-8"><span className="w-fit rounded-full border border-[#ff4d00]/50 bg-black/55 px-3 py-1 font-mono text-[10px] uppercase tracking-[.2em] text-[#ff9a72] backdrop-blur-sm">Centro Nacional de Producción</span><strong className="font-mono text-7xl text-white/75 transition group-hover:text-white">CNP</strong></div>
+            </div>
+            <div className="flex flex-col justify-between p-8 md:p-12"><div><p className="font-mono text-xs uppercase tracking-[.2em] text-white/35">TV Azteca · Operaciones broadcast</p><h3 className="mt-5 text-3xl font-medium tracking-tight md:text-4xl">De editor a productor de noticieros locales.</h3><p className="mt-6 max-w-xl leading-7 text-white/52">Participación en la implementación del tercer centro de producción remota, promocionado de editor a productor en dos meses, produciendo noticieros para televisoras regionales.</p></div><div className="mt-12 flex flex-wrap gap-2">{["Producción", "REMI", "NDI", "Tricaster", "iNews"].map(tag => <span key={tag} className="border border-white/12 px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider text-white/45">{tag}</span>)}</div></div>
           </article>
 
           <div className="mt-6 grid gap-6 lg:grid-cols-3">
