@@ -51,6 +51,38 @@ export default function Home() {
             <div className="relative min-h-72 overflow-hidden bg-[#11151a] p-8"><div className="absolute inset-0 opacity-30 broadcast-grid" /><div className="relative flex h-full flex-col justify-between"><span className="w-fit rounded-full border border-[#ff4d00]/40 bg-[#ff4d00]/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[.2em] text-[#ff7540]">Centro Nacional de Producción</span><strong className="font-mono text-7xl text-white/10 transition group-hover:text-[#ff4d00]/20">CNP</strong></div></div>
             <div className="flex flex-col justify-between p-8 md:p-12"><div><p className="font-mono text-xs uppercase tracking-[.2em] text-white/35">TV Azteca · Operaciones broadcast</p><h3 className="mt-5 text-3xl font-medium tracking-tight md:text-4xl">De editor a productor de noticieros locales.</h3><p className="mt-6 max-w-xl leading-7 text-white/52">Participación en la implementación del tercer centro de producción remota y promoción a productor en dos meses, coordinando producción para televisoras regionales.</p></div><div className="mt-12 flex flex-wrap gap-2">{["Producción", "REMI", "NDI", "Tricaster", "iNews"].map(tag => <span key={tag} className="border border-white/12 px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider text-white/45">{tag}</span>)}</div></div>
           </article>
+
+          <div className="mt-6 grid gap-6 lg:grid-cols-3">
+            <motion.article initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} className="flex min-h-[420px] flex-col justify-between border border-white/12 bg-[#0d1013] p-7">
+              <div>
+                <div className="flex items-center justify-between"><span className="font-mono text-[10px] uppercase tracking-[.2em] text-[#ff7540]">Producción audiovisual</span><span className="font-mono text-xs text-white/25">01</span></div>
+                <h3 className="mt-12 text-3xl font-medium tracking-tight">Tlajtoali</h3>
+                <p className="mt-3 text-sm font-medium text-white/70">Dirección de transmisión · Producción · Cámara</p>
+                <p className="mt-6 leading-7 text-white/48">Participación integral en la producción audiovisual, desde la dirección de transmisión y producción hasta la operación de cámara.</p>
+              </div>
+              <div className="mt-10 border-t border-white/10 pt-5"><span className="font-mono text-xs text-white/35">ENTREGABLES</span><p className="mt-2 text-sm text-white/70">1 video principal + 1 reel</p></div>
+            </motion.article>
+
+            <motion.article initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ delay: .08 }} className="flex min-h-[420px] flex-col justify-between border border-white/12 bg-[#0d1013] p-7">
+              <div>
+                <div className="flex items-center justify-between"><span className="font-mono text-[10px] uppercase tracking-[.2em] text-[#ff7540]">Contenido vertical 9:16</span><span className="font-mono text-xs text-white/25">02</span></div>
+                <h3 className="mt-12 text-3xl font-medium tracking-tight">HUBWELL Logistics</h3>
+                <p className="mt-3 text-sm font-medium text-white/70">Edición y adaptación de marca</p>
+                <p className="mt-6 leading-7 text-white/48">Edición en CapCut Pro a partir de material proporcionado por el cliente, incorporando música, captions y tratamiento visual alineado con su paleta de colores y tipografía.</p>
+              </div>
+              <div className="mt-10 border-t border-white/10 pt-5"><span className="font-mono text-xs text-white/35">ENTREGABLES</span><p className="mt-2 text-sm text-white/70">3 videos en formato 9:16</p></div>
+            </motion.article>
+
+            <motion.article initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ delay: .16 }} className="flex min-h-[420px] flex-col justify-between border border-white/12 bg-[#0d1013] p-7">
+              <div>
+                <div className="flex items-center justify-between"><span className="font-mono text-[10px] uppercase tracking-[.2em] text-[#ff7540]">Narrativa musical</span><span className="font-mono text-xs text-white/25">03</span></div>
+                <h3 className="mt-12 text-3xl font-medium tracking-tight">Videoclip musical</h3>
+                <p className="mt-3 text-sm font-medium text-white/70">Edición de video</p>
+                <p className="mt-6 leading-7 text-white/48">Construcción del ritmo, selección de tomas y continuidad visual para articular la interpretación musical en una pieza audiovisual coherente.</p>
+              </div>
+              <div className="mt-10 border-t border-white/10 pt-5"><span className="font-mono text-xs text-white/35">ROL</span><p className="mt-2 text-sm text-white/70">Editor</p></div>
+            </motion.article>
+          </div>
         </div>
       </section>
 
