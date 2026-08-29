@@ -25,7 +25,7 @@ export default function Home() {
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-8 flex items-center gap-3"><span className="h-px w-10 bg-[#ff4d00]" /><p className="font-mono text-xs uppercase tracking-[0.28em] text-[#ff7540]">Broadcast Operations Leader</p></motion.div>
           <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="max-w-5xl text-[clamp(3.5rem,9vw,8.5rem)] font-semibold leading-[0.84] tracking-[-0.07em]">ISAÍ<br /><span className="text-outline">RODRÍGUEZ</span></motion.h1>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.35 }} className="mt-10 grid gap-8 border-t border-white/15 pt-7 md:grid-cols-[1fr_auto] md:items-end">
-            <p className="max-w-2xl text-base leading-7 text-white/62 md:text-lg">Lidero operaciones audiovisuales, equipos multidisciplinarios y producción remota.</p>
+            <p className="max-w-2xl text-base leading-7 text-white/62 md:text-lg">Lidero operaciones audiovisuales, equipos multidisciplinarios y producciónes en vivo y remotas.</p>
             <div className="flex flex-wrap gap-3"><a href="#proyectos" className="rounded-sm bg-[#ff4d00] px-6 py-3 text-sm font-semibold transition hover:bg-[#ff6425]">Explorar trabajo</a><a href="mailto:orror.isai@outlook.com" className="rounded-sm border border-white/20 px-6 py-3 text-sm font-semibold transition hover:border-white/50 hover:bg-white/5">Hablemos</a></div>
           </motion.div>
         </div>
@@ -54,12 +54,12 @@ export default function Home() {
 
       <section id="proyectos" className="relative z-10 px-6 py-24 lg:px-10">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12 flex flex-wrap items-end justify-between gap-6"><div><p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-[#ff7540]">02 / Trayectoria</p><h2 className="text-4xl font-semibold tracking-[-0.04em] md:text-6xl">Experiencia que conecta.</h2></div><p className="max-w-sm text-sm leading-6 text-white/45">El portafolio crecerá con casos de estudio, evidencia visual y resultados medibles de cada operación.</p></div>
+          <div className="mb-12 flex flex-wrap items-end justify-between gap-6"><div><p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-[#ff7540]">02 / Trayectoria</p><h2 className="text-4xl font-semibold tracking-[-0.04em] md:text-6xl">Experiencia que conecta.</h2></div><p className="max-w-sm text-sm leading-6 text-white/45">.</p></div>
           <article className="group grid overflow-hidden border border-white/12 bg-[#0d1013] md:grid-cols-[1fr_1.2fr]">
             <div className="relative min-h-80 overflow-hidden bg-[#11151a]">
               <Image src="/IMG_20230606_190615.jpg" alt="Isaí Rodríguez operando equipo de producción en el Centro Nacional de Producción" fill sizes="(min-width: 768px) 45vw, 100vw" className="object-cover object-[45%_center] grayscale-[25%] transition duration-700 group-hover:scale-[1.03] group-hover:grayscale-0" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/20" />
-              <div className="relative flex h-full min-h-80 flex-col justify-between p-8"><span className="w-fit rounded-full border border-[#ff4d00]/50 bg-black/55 px-3 py-1 font-mono text-[10px] uppercase tracking-[.2em] text-[#ff9a72] backdrop-blur-sm">Centro Nacional de Producción</span><strong className="font-mono text-7xl text-white/75 transition group-hover:text-white">CNP Jalisco</strong></div>
+              <div className="relative flex h-full min-h-80 flex-col justify-between p-8"><span className="w-fit self-end rounded-full border border-[#ff4d00]/50 bg-black/55 px-3 py-1 text-right font-mono text-[10px] uppercase tracking-[.2em] text-[#ff9a72] backdrop-blur-sm">Centro Nacional de Producción</span><strong className="font-mono text-7xl text-white/75 transition group-hover:text-white">CNP Jalisco</strong></div>
             </div>
             <div className="flex flex-col justify-between p-8 md:p-12"><div><p className="font-mono text-xs uppercase tracking-[.2em] text-white/35">TV Azteca · Operaciones broadcast</p><h3 className="mt-5 text-3xl font-medium tracking-tight md:text-4xl">De editor a productor de noticieros locales.</h3><p className="mt-6 max-w-xl leading-7 text-white/52">Participación en la implementación del tercer centro nacional de producción, promocionado de editor a productor en dos meses, produciendo noticieros para televisoras regionales.</p></div><div className="mt-12 flex flex-wrap gap-2">{["Producción", "REMI", "NDI", "Tricaster"].map(tag => <span key={tag} className="border border-white/12 px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider text-white/45">{tag}</span>)}</div></div>
           </article>
@@ -87,7 +87,7 @@ export default function Home() {
               </div>
               <div className="flex flex-1 flex-col justify-between p-7">
                 <div>
-                  <div className="flex items-center justify-between"><span className="font-mono text-[10px] uppercase tracking-[.2em] text-[#ff7540]">Contenido vertical 9:16</span><span className="font-mono text-xs text-white/25">02</span></div>
+                  <div className="flex items-center justify-between"><span className="font-mono text-[10px] uppercase tracking-[.2em] text-[#ff7540]">Edicion para redes sociales 9:16</span><span className="font-mono text-xs text-white/25">02</span></div>
                   <h3 className="mt-8 text-3xl font-medium tracking-tight">HUBWELL Logistics</h3>
                   <p className="mt-3 text-sm font-medium text-white/70">Edición y adaptación de marca</p>
                   <p className="mt-6 leading-7 text-white/48">Edición en CapCut Pro a partir de material proporcionado por el cliente, incorporando música, captions y tratamiento visual alineado con los assets proporcionados por el cliente.</p>
@@ -102,10 +102,10 @@ export default function Home() {
               </div>
               <div className="flex flex-1 flex-col justify-between p-7">
                 <div>
-                  <div className="flex items-center justify-between"><span className="font-mono text-[10px] uppercase tracking-[.2em] text-[#ff7540]">Narrativa musical</span><span className="font-mono text-xs text-white/25">03</span></div>
-                  <h3 className="mt-8 text-3xl font-medium tracking-tight">Videoclip musical</h3>
+                  <div className="flex items-center justify-between"><span className="font-mono text-[10px] uppercase tracking-[.2em] text-[#ff7540]">Narrativa audiovisual</span><span className="font-mono text-xs text-white/25">03</span></div>
+                  <h3 className="mt-8 text-3xl font-medium tracking-tight">Edición no lineal</h3>
                   <p className="mt-3 text-sm font-medium text-white/70">Edición de video</p>
-                  <p className="mt-6 leading-7 text-white/48">Construcción del ritmo, selección de tomas y continuidad visual para articular la interpretación musical en una pieza audiovisual coherente.</p>
+                  <p className="mt-6 leading-7 text-white/48"> Cuento con amplia experiencia en la edición no lineal de video, montaje rítmico y diseño sonoro. Domino flujos de trabajo eficientes para publicidad, contenido digital y formatos narrativos, transformando material bruto en historias de alto impacto visual.</p>
                 </div>
                 <div className="mt-10 border-t border-white/10 pt-5"><span className="font-mono text-xs text-white/35">ROL</span><p className="mt-2 text-sm text-white/70">Editor</p></div>
               </div>
