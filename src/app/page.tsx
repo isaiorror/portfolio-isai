@@ -3,6 +3,10 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const stats = [["10+", "años en producción audiovisual"], ["5+", "años en TV Azteca"], ["REMI", "producción remota"]];
+const capabilityImages = [
+  { src: "/LFDTV.jpeg", alt: "Isaí Rodríguez coordinando una producción televisiva en vivo desde la cabina", label: "Live direction" },
+  { src: "/tri.jpg", alt: "Consola Tricaster utilizada en operaciones broadcast", label: "Broadcast systems" },
+];
 
 export default function Home() {
   return (
@@ -36,13 +40,13 @@ export default function Home() {
           <div><p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-[#ff7540]">01 / Perfil</p><h2 className="text-4xl font-semibold tracking-[-0.04em] md:text-6xl">Operación,<br />tecnología y<br />liderazgo.</h2></div>
           <div className="grid gap-px overflow-hidden rounded-sm bg-white/10 md:grid-cols-2">
             {[
-              ["Producción en vivo", "Dirección de flujos críticos, cabina, talento y equipos técnicos bajo presión."],
+              ["Producción en vivo", "Dirección de flujos, cabina, talento y equipos técnicos bajo presión."],
               ["Operaciones broadcast", "Coordinación de procesos, recursos y estándares para transmisiones consistentes."],
               ["Producción REMI", "Experiencia en infraestructura y colaboración para producción remota eficiente."],
               ["Liderazgo de equipos", "Alineación de perfiles creativos, editoriales y técnicos hacia un mismo resultado."],
             ].map(([title, copy], index) => <motion.article key={title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .3 }} transition={{ delay: index * .07 }} className="group overflow-hidden bg-[#111417]">
-              {index === 0 && <div className="relative h-44 overflow-hidden"><Image src="/LFDTV.jpeg" alt="Isaí Rodríguez coordinando una producción televisiva en vivo desde la cabina" fill sizes="(min-width: 768px) 35vw, 100vw" className="object-cover transition duration-700 group-hover:scale-[1.04]" /><div className="absolute inset-0 bg-gradient-to-t from-[#111417] via-transparent to-transparent" /><span className="absolute bottom-4 left-5 rounded-full border border-[#ff4d00]/45 bg-black/60 px-3 py-1 font-mono text-[9px] uppercase tracking-[.18em] text-[#ff9a72] backdrop-blur-sm">Live direction</span></div>}
-              <div className="p-7"><span className="font-mono text-xs text-white/25">0{index + 1}</span><h3 className={index === 0 ? "mt-7 text-xl font-medium" : "mt-12 text-xl font-medium"}>{title}</h3><p className="mt-3 text-sm leading-6 text-white/50">{copy}</p></div>
+              {capabilityImages[index] && <div className="relative h-44 overflow-hidden"><Image src={capabilityImages[index].src} alt={capabilityImages[index].alt} fill sizes="(min-width: 768px) 35vw, 100vw" className="object-cover transition duration-700 group-hover:scale-[1.04]" /><div className="absolute inset-0 bg-gradient-to-t from-[#111417] via-transparent to-transparent" /><span className="absolute bottom-4 left-5 rounded-full border border-[#ff4d00]/45 bg-black/60 px-3 py-1 font-mono text-[9px] uppercase tracking-[.18em] text-[#ff9a72] backdrop-blur-sm">{capabilityImages[index].label}</span></div>}
+              <div className="p-7"><span className="font-mono text-xs text-white/25">0{index + 1}</span><h3 className={capabilityImages[index] ? "mt-7 text-xl font-medium" : "mt-12 text-xl font-medium"}>{title}</h3><p className="mt-3 text-sm leading-6 text-white/50">{copy}</p></div>
             </motion.article>)}
           </div>
         </div>
