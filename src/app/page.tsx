@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const stats = [["10+", "años en producción audiovisual"], ["5+", "años en TV Azteca"], ["REMI", "producción remota"]];
 const capabilityImages = [
-  { src: "/LFDTV.jpeg", alt: "Isaí Rodríguez coordinando una producción televisiva en vivo desde la cabina", label: "Live direction", imageClass: "object-cover" },
+  { src: "/LFDTV%202.jpg", alt: "Isaí Rodríguez coordinando una producción televisiva en vivo desde la cabina", label: "Live direction", imageClass: "object-cover" },
   { src: "/tri.jpg", alt: "Consola Tricaster utilizada en operaciones broadcast", label: "Broadcast systems", imageClass: "object-cover" },
   { src: "/diagrama.png", alt: "Diagrama del flujo de producción remota REMI desde una sede remota hasta distribución", label: "REMI workflow", imageClass: "object-contain p-2" },
 ];
