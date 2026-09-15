@@ -13,20 +13,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
-  title: "Isaí Rodríguez | Broadcast Operations Leader",
-  description: "Portafolio ejecutivo de Isaí Rodríguez: liderazgo en operaciones broadcast, producción en vivo y producción remota.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-isai-orpin.vercel.app"),
+  title: "Isaí Rodríguez Ortega | Senior Video Producer & Broadcast Operations",
+  description: "Senior Video Producer with experience in broadcast operations, live production, REMI workflows, audiovisual storytelling and post-production.",
+  keywords: ["Senior Video Producer", "Broadcast Operations", "Live Production", "REMI", "Video Editor", "Technical Producer", "Guadalajara"],
+  authors: [{ name: "Isaí Rodríguez Ortega" }],
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Isaí Rodríguez | Broadcast Operations Leader",
-    description: "Liderazgo en operaciones broadcast, producción en vivo y producción remota.",
+    title: "Isaí Rodríguez Ortega | Senior Video Producer & Broadcast Operations",
+    description: "Senior Video Producer with experience in broadcast operations, live production, REMI workflows, audiovisual storytelling and post-production.",
+    url: "/",
+    siteName: "Isaí Rodríguez Ortega Portfolio",
     images: ["/og.png"],
-    locale: "es_MX",
+    locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Isaí Rodríguez | Broadcast Operations Leader",
-    description: "Liderazgo en operaciones broadcast, producción en vivo y producción remota.",
+    title: "Isaí Rodríguez Ortega | Senior Video Producer & Broadcast Operations",
+    description: "Broadcast operations, live production, REMI workflows, audiovisual storytelling and post-production.",
     images: ["/og.png"],
   },
 };
@@ -34,7 +39,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="es"
+      lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>

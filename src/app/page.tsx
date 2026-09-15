@@ -1,121 +1,78 @@
-"use client";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { Reveal } from "@/components/reveal";
 
-const stats = [["10+", "años en producción audiovisual"], ["5+", "años en TV Azteca"], ["REMI", "producción remota"]];
-const capabilityImages = [
-  { src: "/LFDTV%202.jpg", alt: "Isaí Rodríguez coordinando una producción televisiva en vivo desde la cabina", label: "Live direction", imageClass: "object-cover" },
-  { src: "/tri.jpg", alt: "Consola Tricaster utilizada en operaciones broadcast", label: "Broadcast systems", imageClass: "object-cover" },
-  { src: "/diagrama.png", alt: "Diagrama del flujo de producción remota REMI desde una sede remota hasta distribución", label: "REMI workflow", imageClass: "object-contain p-2" },
+const navItems = [["Work", "#selected-work"], ["CNP", "#cnp"], ["Systems", "#systems"], ["About", "#about"], ["Contact", "#contact"]];
+const heroStats = [["10+ Years", "Audiovisual Production"], ["5+ Years", "Broadcast Production"], ["REMI", "Live & Remote Production"]];
+const selectedWork = [
+  { title: "Tlajtoli 2026", category: "Live Production · Event Production", description: "Direction and audiovisual production for a 90-minute institutional event.", role: "Transmission Director & Audiovisual Producer", year: "2026", href: "#tlajtoli", image: "/LFDTV%202.jpg" },
+  { title: "Costa Maya", category: "Field Production · Storytelling", description: "A six-week field production across municipalities in Quintana Roo.", role: "Field Production & Editing", year: "Project archive", href: "#costa-maya" },
+  { title: "CNP / TV Azteca", category: "Broadcast Operations · REMI", description: "Implementation, daily production and evolution of a remote news operation.", role: "Video Editor → Local News Producer", year: "2021–2026", href: "#cnp", image: "/IMG_20230606_190615.jpg" },
+  { title: "Motion Graphics", category: "Motion · Post-production", description: "Graphic adaptation, lower thirds, transitions and motion assets.", role: "Editor", year: "Selected work", href: "#motion", media: "/cortinilla-01.mp4" },
+  { title: "Selected Editing Work", category: "Digital Content · Editing", description: "Vertical content edited from client-provided footage and aligned to brand systems.", role: "Editor", year: "Selected work", href: "#editing", media: "/hubwell-01.mp4" },
 ];
+const operationMetrics = [["7", "Daily newscasts"], ["4h+", "Daily content / production"], ["20+", "Stories reviewed per shift"], ["7–10", "Editors supervised"], ["19", "Reporters coordinated"], ["17", "CNP team members"], ["3–4", "Rundowns reviewed daily"], ["20+", "Editors trained over the operation"], ["2", "Tricaster operators trained"], ["~70%", "Approx. reduction in editing errors"]];
+const timeline = [["Day 1", "Joined the third CNP implementation as Video Editor."], ["2 months", "Promoted to Local News Producer."], ["~5 months", "The team operation reached stable daily production."], ["Year 4", "Participated in operational redesign and quality-workflow evolution."], ["Year 5", "Training, documentation and knowledge-transfer processes matured."]];
+const systems = ["Operational manuals", "Video tutorials", "Glossaries", "Continuity diagrams", "Visual aids", "Premiere sequence references", "Story review processes", "ISO recording processes", "Workflow documentation"];
+const software = ["Adobe Premiere Pro", "After Effects", "Photoshop", "Illustrator", "Audition", "Final Cut Pro", "Tricaster", "NDI", "OBS"];
+
+function SectionHeading({ eyebrow, title, copy }: { eyebrow: string; title: string; copy?: string }) {
+  return <div className="section-heading"><p className="eyebrow">{eyebrow}</p><h2>{title}</h2>{copy && <p className="section-copy">{copy}</p>}</div>;
+}
+
+function Placeholder({ label }: { label: string }) {
+  return <div className="media-placeholder" role="img" aria-label={`${label}. Media pending`}><span>MEDIA PENDING</span><strong>{label}</strong></div>;
+}
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#07090b] text-white">
-      <div className="broadcast-grid absolute inset-0 opacity-50" aria-hidden="true" />
-      <div className="signal-glow absolute -right-40 top-20 h-[520px] w-[520px] rounded-full" aria-hidden="true" />
-      <nav className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-7 lg:px-10">
-        <a href="#inicio" className="font-mono text-sm font-semibold tracking-[0.22em]">IRO<span className="text-[#ff4d00]">/</span>LIVE</a>
-        <div className="hidden items-center gap-8 text-xs font-medium uppercase tracking-[0.18em] text-white/60 md:flex">
-          <a className="transition hover:text-white" href="#experiencia">Experiencia</a><a className="transition hover:text-white" href="#proyectos">Proyectos</a><a className="transition hover:text-white" href="mailto:orror.isai@outlook.com">Contacto</a>
-        </div>
-        <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-white/60"><span className="h-2 w-2 animate-pulse rounded-full bg-[#ff4d00]" /> Disponible</span>
-      </nav>
-      <section id="inicio" className="relative z-10 mx-auto grid min-h-[calc(100vh-92px)] max-w-7xl items-center gap-12 px-6 pb-16 pt-12 lg:grid-cols-[1fr_0.55fr] lg:px-10 lg:pb-24">
-        <div>
-          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-8 flex items-center gap-3"><span className="h-px w-10 bg-[#ff4d00]" /><p className="font-mono text-xs uppercase tracking-[0.28em] text-[#ff7540]">Broadcast Operations Leader</p></motion.div>
-          <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="max-w-5xl text-[clamp(3.5rem,9vw,8.5rem)] font-semibold leading-[0.84] tracking-[-0.07em]">ISAÍ<br /><span className="text-outline">RODRÍGUEZ</span></motion.h1>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.35 }} className="mt-10 grid gap-8 border-t border-white/15 pt-7 md:grid-cols-[1fr_auto] md:items-end">
-            <p className="max-w-2xl text-base leading-7 text-white/62 md:text-lg">Productor Audiovisual, experiencia trabajando con equipos multidisciplinarios y con producciónes en vivo y remotas.</p>
-            <div className="flex flex-wrap gap-3"><a href="#proyectos" className="rounded-sm bg-[#ff4d00] px-6 py-3 text-sm font-semibold transition hover:bg-[#ff6425]">Explorar trabajo</a><a href="mailto:orror.isai@outlook.com" className="rounded-sm border border-white/20 px-6 py-3 text-sm font-semibold transition hover:border-white/50 hover:bg-white/5">Hablemos</a></div>
-          </motion.div>
-        </div>
-        <motion.aside initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.25 }} className="self-end border-l border-white/15 pl-6 lg:mb-4">
-          <p className="mb-5 font-mono text-[10px] uppercase tracking-[0.2em] text-white/35">Impacto operativo</p>
-          <div className="grid grid-cols-3 gap-4 lg:grid-cols-1">{stats.map(([value, label]) => <div key={label} className="border-t border-white/15 pt-4 lg:flex lg:items-baseline lg:justify-between"><strong className="block text-2xl font-medium tracking-tight lg:text-3xl">{value}</strong><span className="mt-1 block text-xs text-white/45 lg:text-right">{label}</span></div>)}</div>
-        </motion.aside>
-      </section>
+    <main className="site-shell">
+      <a className="skip-link" href="#main-content">Skip to content</a><div className="broadcast-grid" aria-hidden="true" />
+      <header className="site-header">
+        <a href="#top" className="brand" aria-label="Isaí Rodríguez, home">IRO<span>/</span>LIVE</a>
+        <nav aria-label="Primary navigation">{navItems.map(([label, href]) => <a key={href} href={href}>{label}</a>)}</nav>
+        <div className="header-tools"><span className="language" aria-label="Language: English. Spanish version planned"><b>EN</b><i>/</i><span>ES</span></span><span className="availability"><i />Available</span></div>
+      </header>
 
-      <section id="experiencia" className="relative z-10 border-t border-white/10 bg-[#0b0e11] px-6 py-24 lg:px-10">
-        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.55fr_1fr]">
-          <div><p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-[#ff7540]">01 / Perfil</p><h2 className="text-4xl font-semibold tracking-[-0.04em] md:text-6xl">Operación,<br />tecnología y<br />trabajo en equipo.</h2></div>
-          <div className="grid gap-px overflow-hidden rounded-sm bg-white/10 md:grid-cols-2">
-            {[
-              ["Producción en vivo", "Dirección de flujos, cabina, talento y equipos técnicos bajo presión."],
-              ["Operaciones broadcast", "Coordinación de procesos, recursos y estándares para transmisiones consistentes."],
-              ["Producción REMI", "Experiencia en infraestructura y colaboración para producción remota eficiente."],
-              ["Liderazgo de equipos", "Alineación de perfiles creativos, editoriales y técnicos hacia un mismo resultado."],
-            ].map(([title, copy], index) => <motion.article key={title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .3 }} transition={{ delay: index * .07 }} className="group overflow-hidden bg-[#111417]">
-              {capabilityImages[index] && <div className="relative h-44 overflow-hidden bg-black"><Image src={capabilityImages[index].src} alt={capabilityImages[index].alt} fill sizes="(min-width: 768px) 35vw, 100vw" className={`${capabilityImages[index].imageClass} transition duration-700 group-hover:scale-[1.04]`} /><div className="absolute inset-0 bg-gradient-to-t from-[#111417] via-transparent to-transparent" /><span className="absolute bottom-4 left-5 rounded-full border border-[#ff4d00]/45 bg-black/60 px-3 py-1 font-mono text-[9px] uppercase tracking-[.18em] text-[#ff9a72] backdrop-blur-sm">{capabilityImages[index].label}</span></div>}
-              <div className="p-7"><span className="font-mono text-xs text-white/25">0{index + 1}</span><h3 className={capabilityImages[index] ? "mt-7 text-xl font-medium" : "mt-12 text-xl font-medium"}>{title}</h3><p className="mt-3 text-sm leading-6 text-white/50">{copy}</p></div>
-            </motion.article>)}
-          </div>
+      <section id="top" className="hero">
+        <Image src="/LFDTV%202.jpg" alt="Isaí Rodríguez working in a live production environment" fill priority sizes="100vw" className="hero-image" /><div className="hero-shade" />
+        <div id="main-content" className="hero-content">
+          <Reveal><p className="eyebrow">Storytelling · Production · Operations · Technology</p><h1>ISAÍ<br /><span>RODRÍGUEZ</span><br /><small>ORTEGA</small></h1></Reveal>
+          <Reveal delay={0.12} className="hero-positioning"><h2>Senior Video Producer <i>·</i> Broadcast Operations <i>·</i> Live Production</h2><p>I create and deliver audiovisual content across broadcast, live production and digital platforms, combining storytelling, hands-on production and scalable workflows.</p><div className="hero-actions"><a className="button primary" href="#selected-work">View selected work</a><button className="button secondary pending-action" type="button" disabled title="Showreel pending">Watch showreel <span>Coming soon</span></button><button className="text-button pending-action" type="button" disabled title="CV file pending">Download CV <span>Coming soon</span></button></div></Reveal>
+          <div className="hero-stats">{heroStats.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}</div>
         </div>
       </section>
 
-      <section id="proyectos" className="relative z-10 px-6 py-24 lg:px-10">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12 flex flex-wrap items-end justify-between gap-6"><div><p className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-[#ff7540]">02 / Trayectoria</p><h2 className="text-4xl font-semibold tracking-[-0.04em] md:text-6xl">Experiencia que conecta.</h2></div><p className="max-w-sm text-sm leading-6 text-white/45">.</p></div>
-          <article className="group grid overflow-hidden border border-white/12 bg-[#0d1013] md:grid-cols-[1fr_1.2fr]">
-            <div className="relative min-h-80 overflow-hidden bg-[#11151a]">
-              <Image src="/IMG_20230606_190615.jpg" alt="Isaí Rodríguez operando equipo de producción en el Centro Nacional de Producción" fill sizes="(min-width: 768px) 45vw, 100vw" className="object-cover object-[45%_center] grayscale-[25%] transition duration-700 group-hover:scale-[1.03] group-hover:grayscale-0" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/20" />
-              <div className="relative flex h-full min-h-80 flex-col justify-between p-8"><span className="w-fit self-end rounded-full border border-[#ff4d00]/50 bg-black/55 px-3 py-1 text-right font-mono text-[10px] uppercase tracking-[.2em] text-[#ff9a72] backdrop-blur-sm">Centro Nacional de Producción</span><strong className="font-mono text-7xl text-white/75 transition group-hover:text-white">CNP Jalisco</strong></div>
-            </div>
-            <div className="flex flex-col justify-between p-8 md:p-12"><div><p className="font-mono text-xs uppercase tracking-[.2em] text-white/35">TV Azteca · Operaciones broadcast</p><h3 className="mt-5 text-3xl font-medium tracking-tight md:text-4xl">Editor y productor de noticieros locales.</h3><p className="mt-6 max-w-xl leading-7 text-white/52">Participación en la implementación del tercer (CNP) centro nacional de producción, promocionado de editor a productor, produciendo noticieros para televisoras regionales y participando en proyectos especiales.</p></div><div className="mt-12 flex flex-wrap gap-2">{["Producción", "REMI", "NDI", "Tricaster"].map(tag => <span key={tag} className="border border-white/12 px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider text-white/45">{tag}</span>)}</div></div>
-          </article>
+      <section id="selected-work" className="section selected-work"><div className="section-inner">
+        <SectionHeading eyebrow="01 / Portfolio" title="SELECTED WORK" copy="Selected projects across storytelling, broadcast, live production and field production." />
+        <div className="work-grid">{selectedWork.map((project, index) => <Reveal key={project.title} delay={index * 0.04} className="work-card"><a href={project.href} aria-label={`View project: ${project.title}`}><div className="work-media">{project.image && <Image src={project.image} alt="" fill sizes="(min-width: 900px) 50vw, 100vw" className="cover-image" />}{project.media && <video muted playsInline preload="none" aria-hidden="true"><source src={project.media} type="video/mp4" /></video>}{!project.image && !project.media && <Placeholder label="Costa Maya field production" />}<span className="work-index">0{index + 1}</span></div><div className="work-body"><p className="card-category">{project.category}</p><h3>{project.title}</h3><p>{project.description}</p><dl><div><dt>Role</dt><dd>{project.role}</dd></div><div><dt>Year</dt><dd>{project.year}</dd></div></dl><span className="view-link">View project <b aria-hidden="true">↗</b></span></div></a></Reveal>)}</div>
+      </div></section>
 
-          <div className="mt-6 grid gap-6 lg:grid-cols-3">
-            <motion.article initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} className="flex min-h-[420px] flex-col overflow-hidden border border-white/12 bg-[#0d1013]">
-              <video className="aspect-video w-full bg-black object-contain" controls playsInline preload="metadata" aria-label="Video de la producción audiovisual Tlajtoali">
-                <source src="/tlajtoali-video.mp4" type="video/mp4" />
-                Tu navegador no puede reproducir este video.
-              </video>
-              <div className="flex flex-1 flex-col justify-between p-7">
-                <div>
-                  <div className="flex items-center justify-between"><span className="font-mono text-[10px] uppercase tracking-[.2em] text-[#ff7540]">Producción audiovisual</span><span className="font-mono text-xs text-white/25">01</span></div>
-                  <h3 className="mt-8 text-3xl font-medium tracking-tight">Tlajtoli 2026</h3>
-                  <p className="mt-3 text-sm font-medium text-white/70">Dirección de transmisión · Producción · Cámara</p>
-<p className="mt-6 leading-7 text-white/48">Participación integral en la producción audiovisual, participando en levantamiento de imágenes, director de transmisión, producción y editor de video final.</p>
-                </div>
-                <div className="mt-10 border-t border-white/10 pt-5"><span className="font-mono text-xs text-white/35">ENTREGABLES</span><p className="mt-2 text-sm text-white/70">1 video principal + 1 reel + 1 transmisión a RRSS </p></div>
-              </div>
-            </motion.article>
+      <section id="tlajtoli" className="section case-study"><div className="section-inner">
+        <SectionHeading eyebrow="02 / Live production" title="TLAJTOLI 2026" copy="Live production · Event production · Storytelling" />
+        <div className="case-layout"><div className="case-media"><video controls playsInline preload="metadata" aria-label="Tlajtoli 2026 audiovisual production"><source src="/tlajtoali-video.mp4" type="video/mp4" />Your browser cannot play this video.</video></div><div className="case-content"><p className="client">CEDSPI · Gobierno del Estado de Hidalgo</p><h3>Director de Transmisión y Productor Audiovisual</h3><p>Dirección de transmisión del acto protocolario y producción de materiales audiovisuales para una operación multicámara de aproximadamente 90 minutos.</p><div className="fact-row"><div><strong>90 min</strong><span>Transmisión aproximada</span></div><div><strong>6</strong><span>Personas en producción</span></div><div><strong>2</strong><span>Cámaras: fija + móvil</span></div></div><ul className="detail-list"><li>Dirección de transmisión y coordinación del acto protocolario.</li><li>Producción de una cápsula institucional y un reel.</li><li>Captura y entrega de materiales audiovisuales.</li></ul><div className="tag-list">{["Sony FX30", "DJI Osmo Mobile 3", "Blackmagic", "OBS", "Adobe Premiere Pro", "Tugga MD44"].map(item => <span key={item}>{item}</span>)}</div></div></div>
+      </div></section>
 
-            <motion.article initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ delay: .08 }} className="flex min-h-[420px] flex-col overflow-hidden border border-white/12 bg-[#0d1013]">
-              <div className="grid grid-cols-2 gap-px bg-white/10">
-                {["/hubwell-01.mp4", "/hubwell-02.mp4"].map((src, index) => <video key={src} className="aspect-[9/16] w-full bg-black object-contain" controls playsInline preload="metadata" aria-label={`Video vertical ${index + 1} editado para HUBWELL Logistics`}><source src={src} type="video/mp4" />Tu navegador no puede reproducir este video.</video>)}
-              </div>
-              <div className="flex flex-1 flex-col justify-between p-7">
-                <div>
-                  <div className="flex items-center justify-between"><span className="font-mono text-[10px] uppercase tracking-[.2em] text-[#ff7540]">Edicion para redes sociales</span><span className="font-mono text-xs text-white/25">02</span></div>
-                  <h3 className="mt-8 text-3xl font-medium tracking-tight">HUBWELL Logistics</h3>
-                  <p className="mt-3 text-sm font-medium text-white/70">Edición y adaptación de marca</p>
-                  <p className="mt-6 leading-7 text-white/48">Edición en CapCut Pro a partir de material proporcionado por el cliente, incorporando música, captions y tratamiento visual alineado con los elementos que solicitan nuestros clientes.</p>
-                </div>
-                <div className="mt-10 border-t border-white/10 pt-5"><span className="font-mono text-xs text-white/35">ENTREGABLES</span><p className="mt-2 text-sm text-white/70">Videos virales para RRSS</p></div>
-              </div>
-            </motion.article>
+      <section id="costa-maya" className="section field-section"><div className="section-inner field-layout"><div><SectionHeading eyebrow="03 / Field production" title="COSTA MAYA" copy="Field production · Visual storytelling · Institutional content" /><p className="lead-copy">Proyecto especial de aproximadamente seis semanas: un recorrido audiovisual por cerca de cinco municipios para capturar lugares, actividades y tradiciones de Quintana Roo.</p><div className="fact-row"><div><strong>~6</strong><span>Semanas</span></div><div><strong>8</strong><span>Personas en el equipo</span></div><div><strong>~5</strong><span>Municipios</span></div></div><ul className="detail-list"><li>Captura de imágenes y producción en campo.</li><li>Edición de contenidos informativos y promocionales.</li><li>Producción y edición de tres notas especiales.</li><li>Selección de aproximadamente dos horas de B-roll.</li></ul></div><Placeholder label="Costa Maya photography / B-roll" /></div></section>
 
-            <motion.article initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .2 }} transition={{ delay: .16 }} className="flex min-h-[420px] flex-col overflow-hidden border border-white/12 bg-[#0d1013]">
-              <div className="grid gap-px bg-white/10">
-                {["/cortinilla-01.mp4", "/cortinilla-02.mp4"].map((src, index) => <video key={src} className="aspect-video w-full bg-black object-contain" controls playsInline preload="metadata" aria-label={`Cortinilla musical ${index + 1} editada por Isaí Rodríguez`}><source src={src} type="video/mp4" />Tu navegador no puede reproducir este video.</video>)}
-              </div>
-              <div className="flex flex-1 flex-col justify-between p-7">
-                <div>
-                  <div className="flex items-center justify-between"><span className="font-mono text-[10px] uppercase tracking-[.2em] text-[#ff7540]">Narrativa audiovisual</span><span className="font-mono text-xs text-white/25">03</span></div>
-                  <h3 className="mt-8 text-3xl font-medium tracking-tight">Edición no lineal</h3>
-                  <p className="mt-3 text-sm font-medium text-white/70">Edición de video</p>
-                  <p className="mt-6 leading-7 text-white/48"> Cuento con amplia experiencia en la edición no lineal de video, montaje rítmico y diseño sonoro. Domino flujos de trabajo eficientes para publicidad, contenido digital y formatos narrativos, transformando material bruto en historias de alto impacto visual.</p>
-                </div>
-                <div className="mt-10 border-t border-white/10 pt-5"><span className="font-mono text-xs text-white/35">ROL</span><p className="mt-2 text-sm text-white/70">Editor</p></div>
-              </div>
-            </motion.article>
-          </div>
-        </div>
-      </section>
+      <section id="cnp" className="section cnp-section"><div className="section-inner">
+        <SectionHeading eyebrow="04 / Principal case study" title="BUILDING A REMOTE NEWS PRODUCTION OPERATION" copy="Third Centro Nacional de Producción · TV Azteca" />
+        <div className="cnp-intro"><div className="cnp-photo"><Image src="/IMG_20230606_190615.jpg" alt="Isaí Rodríguez operating production equipment at CNP Jalisco" fill sizes="(min-width: 900px) 48vw, 100vw" className="cover-image cnp-image" /></div><div className="narrative-flow">{[["Challenge", "Joined on February 16, 2021 as a Video Editor during implementation of TV Azteca’s third Centro Nacional de Producción."], ["Implementation", "Participated from day one in process definition, continuity criteria, material delivery, training, documentation and REMI operation."], ["Operation", "Promoted approximately two months later to Local News Producer within a daily, multi-team production environment."], ["Evolution", "Worked with direction, coordination and editors to identify problems, improve quality controls and transfer operational knowledge."], ["Impact", "Contributed to a stable operation and processes associated with an approximate 70% reduction in editing errors."]].map(([stage, text]) => <div key={stage}><span>{stage}</span><p>{text}</p></div>)}</div></div>
+        <div className="technical-panel"><div><p className="eyebrow">Tricaster / Technical implementation</p><h3>Configuration for the operation</h3><p>Participated in configuring Tricaster from the ground up as part of the implementation team—not as the sole designer of the CNP infrastructure.</p></div><ul>{["Virtual sets", "Wipes and transitions", "Bumpers", "Resource ingest", "Story ingest", "ISO recording preparation", "REMI workflow preparation", "Operator training"].map(item => <li key={item}>{item}</li>)}</ul></div>
+        <div className="metrics-block"><div className="metrics-heading"><p className="eyebrow">Operation at scale</p><h3>A daily production environment supported and coordinated by a multidisciplinary team.</h3></div><div className="metrics-grid">{operationMetrics.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}</div></div>
+        <div className="timeline-block"><div><p className="eyebrow">Operational evolution</p><h3>From implementation to knowledge transfer.</h3><div className="tag-list process-tags">{["Process improvement", "Training", "Knowledge transfer", "Operational standardization"].map(item => <span key={item}>{item}</span>)}</div></div><ol className="timeline">{timeline.map(([time, text]) => <li key={time}><span>{time}</span><p>{text}</p></li>)}</ol></div>
+      </div></section>
 
-      <footer className="relative z-10 border-t border-white/10 px-6 py-14 lg:px-10"><div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 md:flex-row md:items-end"><div><p className="font-mono text-xs uppercase tracking-[.25em] text-[#ff7540]">Contacto</p><a className="mt-4 block text-2xl font-medium tracking-tight transition hover:text-[#ff7540] md:text-4xl" href="mailto:orror.isai@outlook.com">orror.isai@outlook.com</a></div><div className="text-sm text-white/40"><a className="mr-6 hover:text-white" href="https://www.linkedin.com/in/iro/" target="_blank" rel="noreferrer">LinkedIn</a><span>Guadalajara, México</span></div></div></footer>
+      <section id="systems" className="section systems-section"><div className="section-inner"><SectionHeading eyebrow="05 / Operations" title="PRODUCTION SYSTEMS & KNOWLEDGE TRANSFER" copy="Tools and documentation developed with the team to make production more consistent, teachable and scalable." /><div className="systems-grid">{systems.map((item, index) => <div key={item}><span>0{index + 1}</span><strong>{item}</strong></div>)}</div><div className="documentation-gallery"><Placeholder label="Operational manual sample" /><Placeholder label="Workflow diagram sample" /><Placeholder label="Training material sample" /></div></div></section>
+
+      <section id="motion" className="section post-section"><div className="section-inner"><SectionHeading eyebrow="06 / Craft" title="MOTION & POST-PRODUCTION" copy="Hands-on experience across editing, montage, graphics, audio and broadcast or digital delivery." /><div className="post-layout"><div className="video-pair">{["/cortinilla-01.mp4", "/cortinilla-02.mp4"].map((src, index) => <video key={src} controls playsInline preload="none" aria-label={`Motion graphics sample ${index + 1}`}><source src={src} type="video/mp4" /></video>)}</div><div><div className="skill-copy">{["Editing and montage", "Lower thirds and motion graphics", "MOGRT templates and graphic adaptation", "Masks and compositing", "Audio editing", "Broadcast and digital deliverables"].map(item => <p key={item}>{item}</p>)}</div><div className="software-list">{software.map(item => <span key={item}>{item}</span>)}</div></div></div></div></section>
+
+      <section id="editing" className="section editing-section"><div className="section-inner"><SectionHeading eyebrow="07 / Digital" title="SELECTED EDITING WORK" copy="Editing and brand adaptation for vertical digital content." /><div className="editing-layout"><div className="vertical-videos">{["/hubwell-01.mp4", "/hubwell-02.mp4"].map((src, index) => <video key={src} controls playsInline preload="none" aria-label={`Vertical video ${index + 1} edited for HUBWELL Logistics`}><source src={src} type="video/mp4" /></video>)}</div><div><p className="client">HUBWELL Logistics</p><h3>Editor</h3><p className="lead-copy">Edición en CapCut Pro a partir de grabaciones proporcionadas por el cliente, incorporando música, captions y tratamiento visual alineado con su paleta de color y tipografía.</p><p className="note">Plataformas de publicación no confirmadas.</p></div></div></div></section>
+
+      <section id="collaboration" className="section collaboration-section"><div className="section-inner collaboration-layout"><SectionHeading eyebrow="08 / Collaboration" title="MULTIDISCIPLINARY COLLABORATION" /><div><p className="lead-copy">Experience coordinating production, editorial, technical and local teams within deadline-driven broadcast environments.</p><div className="collaboration-list">{["Editors", "Coordinators", "Engineering", "Operators", "Reporters", "Local producers", "On-air talent", "Local master control"].map(item => <span key={item}>{item}</span>)}</div><p className="section-copy">The work also included training, documentation and knowledge transfer between editors and operators.</p></div></div></section>
+
+      <section id="about" className="section about-section"><div className="section-inner about-layout"><SectionHeading eyebrow="09 / About" title="PROCESS THINKING MEETS STORYTELLING" /><div><p className="lead-copy">Isaí began his professional career in industrial operations and later developed his path in audiovisual production and television. His experience connects communication, production, operations, process design and technology.</p><div className="education-grid"><article><span>2004–2009</span><h3>Licenciatura en Ciencias de la Comunicación</h3><p>Universidad Autónoma del Estado de Hidalgo</p><strong>Titulado</strong></article><article><span>2015–2019</span><h3>Ingeniería Industrial</h3><p>Instituto Tecnológico de Pachuca</p><strong>Materias concluidas · Titulación pendiente</strong></article></div></div></div></section>
+
+      <footer id="contact" className="contact-section"><div className="section-inner contact-layout"><div><p className="eyebrow">10 / Contact</p><h2>LET&apos;S BUILD<br />THE NEXT STORY.</h2></div><div className="contact-details"><h3>Isaí Rodríguez Ortega</h3><p>Guadalajara, Jalisco, México</p><a href="mailto:orror.isai@outlook.com">orror.isai@outlook.com</a><a href="https://www.linkedin.com/in/iro/" target="_blank" rel="noreferrer">LinkedIn ↗</a><button className="button secondary pending-action" type="button" disabled title="CV file pending">Download CV <span>Coming soon</span></button></div></div><div className="footer-line"><span>IRO/LIVE</span><span>Senior Video Producer · Broadcast Operations · Live Production</span><span>© {new Date().getFullYear()}</span></div></footer>
     </main>
   );
 }
