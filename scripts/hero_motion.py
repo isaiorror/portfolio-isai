@@ -21,7 +21,7 @@ from PIL import Image, ImageDraw, ImageFont
 NOMBRE = "ISAÍ RODRÍGUEZ ORTEGA"
 EYEBROW = "MOTION GRAPHICS Y VIDEO"
 LEMA = ""  # vacío = sin frase bajo el nombre
-SUPER_2 = "MOTION GRAPHICS Y VIDEO · GUADALAJARA, MX"
+SUPER_2 = "PRODUCTOR Y REALIZADOR AUDIOVISUAL"
 WIPE_TXT = "DEL RODAJE AL AIRE"
 
 # (rol en una línea para 16:9, rol en varias líneas para 4:5, herramientas)
