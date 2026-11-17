@@ -11,6 +11,7 @@ import { es as t } from '@/lib/capcut-content';
 // visual y técnica, planear entregas, proponer herramientas (incluida IA) y ver demo reel.
 
 const CV = '/isai-rodriguez-cv-es.pdf';
+const orbitLabels = { open: 'Abrir video ↗', youtube: 'Ver en YouTube ↗', soundOn: 'Activar sonido', soundOff: 'Silenciar', prev: 'Video anterior', next: 'Video siguiente', play: 'Reproducir' };
 
 const corporate = [
   { id: 'tvQ7fljLNfw', client: 'IDIM Olben', kind: 'Video corporativo', role: 'Guion, grabación y edición' },
@@ -84,12 +85,12 @@ export function MotionLeadPortfolio() {
       <Reveal><p className="eyebrow">04 / Campañas y redes</p><h2 className="edit-title">Marcas en formato<br/>vertical.</h2></Reveal>
       <article id="hubwell" className="edit-case edit-case-hubwell"><div><p className="eyebrow">{t.hubwell.eyebrow}</p><h3>{t.hubwell.titleA}<br/>{t.hubwell.titleB}</h3><p>{t.hubwell.body} <a className="edit-inline-link" href="https://www.instagram.com/hubwell.mx/reels/" target="_blank" rel="noreferrer">{t.hubwell.instagram}</a></p><dl className="edit-facts">{t.hubwell.facts.map(([dt, dd]) => <div key={dt}><dt>{dt}</dt><dd>{dd}</dd></div>)}</dl><ul>{t.hubwell.bullets.map((b) => <li key={b}>{b}</li>)}</ul></div></article>
       <article className="edit-case edit-case-ad ml-case-text"><div><p className="eyebrow">{t.aalatam.eyebrow}</p><h3>{t.aalatam.titleA}<br/>{t.aalatam.titleB}</h3><p>{t.aalatam.body}</p><dl className="edit-facts">{t.aalatam.facts.map(([dt, dd]) => <div key={dt}><dt>{dt}</dt><dd>{dd}</dd></div>)}</dl></div></article>
-      <div className="ml-orbit-wrap"><OrbitReel items={[...['/hubwell-01.mp4', '/hubwell-02.mp4', '/hubwell_3.mov'].map((src, i) => ({ src, label: t.hubwell.labels[i] })), { src: '/AALATAM%20V4.mp4', label: t.aalatam.label }]} openLabel="Abrir video ↗" soundOn="Activar sonido" soundOff="Silenciar" prevLabel="Video anterior" nextLabel="Video siguiente" aria="Videos verticales para campañas y redes" /></div>
+      <div className="ml-orbit-wrap"><OrbitReel items={[...['/hubwell-01.mp4', '/hubwell-02.mp4', '/hubwell_3.mov'].map((src, i) => ({ src, label: t.hubwell.labels[i] })), { src: '/AALATAM%20V4.mp4', label: t.aalatam.label }]} aria="Videos verticales para campañas y redes" labels={orbitLabels} /></div>
     </div></section>
 
     <section id="ml-corporate" className="section"><div className="section-inner">
       <Reveal><p className="eyebrow">05 / Video corporativo e institucional</p><h2 className="edit-title">Del guion<br/>a la pantalla.</h2><p className="edit-summary">Proyectos para marcas e instituciones, de la idea a la entrega final.</p></Reveal>
-      <div className="ml-yt-grid">{corporate.map((v) => <figure key={v.id} className="ml-yt"><div className="ml-yt-frame"><iframe src={`https://www.youtube-nocookie.com/embed/${v.id}`} title={`${v.client} – ${v.kind}`} loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowFullScreen /></div><figcaption><strong>{v.client}</strong><span>{v.kind} · {v.role}</span><a href={`https://www.youtube.com/watch?v=${v.id}`} target="_blank" rel="noreferrer">Ver en YouTube ↗</a></figcaption></figure>)}</div>
+      <OrbitReel wide items={corporate.map((v) => ({ youtube: v.id, label: v.client, sub: `${v.kind} · ${v.role}` }))} aria="Videos corporativos e institucionales" labels={orbitLabels} />
     </div></section>
 
     <section id="ml-tools" className="section"><div className="section-inner">
