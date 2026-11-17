@@ -95,7 +95,7 @@ export function MotionLeadPortfolio() {
       <div className="edit-skills">{[
         ['Adobe', 'After Effects (motion graphics), Premiere Pro, Illustrator, Photoshop y Audition.'],
         ['Edición y producción', 'CapCut Pro, Final Cut Pro, Tricaster (REMI), OBS y NDI. Equipo propio: cámara Sony FX30, DJI Osmo y micrófonos inalámbricos DJI.'],
-        ['Inteligencia artificial', 'ChatGPT, Claude y Google Flow para ideación, guiones, organización y producción de contenidos.'],
+        ['Inteligencia artificial', 'ChatGPT, Claude, Google Flow y Higgsfield para ideación, guiones, organización y producción de contenidos.'],
       ].map(([title, copy]) => <div key={title}><h3>{title}</h3><p>{copy}</p></div>)}</div>
     </div></section>
 

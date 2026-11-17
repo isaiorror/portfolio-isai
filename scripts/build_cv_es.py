@@ -260,7 +260,7 @@ for title, items in [
     ("Adobe", ["Premiere Pro", "After Effects", "Photoshop", "Illustrator", "Audition"]),
     ("Edición", ["CapCut Pro", "Final Cut Pro"]),
     ("Producción", ["Sony FX30", "DJI Osmo", "Micrófonos DJI", "Tricaster (REMI)", "OBS"]),
-    ("Inteligencia artificial", ["ChatGPT", "Claude", "Google Flow"]),
+    ("Inteligencia artificial", ["ChatGPT", "Claude", "Google Flow", "Higgsfield"]),
 ]:
     c.setFillColor(INK)
     c.setFont("Sans-Bold", 8.6)
