@@ -43,9 +43,9 @@ export function MotionLeadPortfolio() {
         </ul></div></div>
       <h3 className="ml-subtitle">Cómo organizo un proyecto</h3>
       <ol className="edit-workflow ml-workflow">{[
-        ['Brief y prioridades', 'Aterrizo el concepto con el equipo creativo, defino entregables, responsables y fechas.'],
-        ['Producción', 'Reparto tareas, fijo revisiones intermedias y doy seguimiento a cada entregable.'],
-        ['Revisión de calidad', 'Reviso composición, animación, tipografía, audio y formatos antes de que salga cualquier pieza.'],
+        ['Brief y preproducción', 'Aterrizo el concepto, el guion y la planeación del rodaje (equipo y tiempos); defino entregables, responsables y fechas.'],
+        ['Rodaje y postproducción', 'Grabo con cámara, iluminación y audio directo; edito, hago corrección de color básica y mezclo audio, con revisiones intermedias.'],
+        ['Revisión de calidad', 'Reviso composición, color, animación, tipografía, audio y formatos antes de que salga cualquier pieza.'],
         ['Entrega y mejora', 'Entrego a tiempo, documento lo aprendido y propongo ajustes de proceso o herramientas.'],
       ].map(([title, copy], i) => <li key={title}><span>{String(i + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{copy}</p></li>)}</ol>
     </div></section>
@@ -60,6 +60,12 @@ export function MotionLeadPortfolio() {
         <div className="edit-assignment-media"><Image src="/FOTO%20TLAJ.jpg" alt={t.tlajtoli.photoAlt} width={1000} height={700}/><Video src="/tlajtoali-video.mp4" label="Tlajtoli 2026 / Reel" t={t}/></div>
         <div><p className="eyebrow">Tlajtoli 2026 / Evento institucional</p><h3>{t.tlajtoli.heading}</h3><p>{t.tlajtoli.body}</p></div>
       </article>
+      <h3 className="ml-subtitle">En rodaje</h3>
+      <div className="edit-skills">{[
+        ['Preproducción', 'Guion y planeación del rodaje en estudio o exteriores: equipo, tiempos y necesidades técnicas.'],
+        ['Cámara, luz y audio', 'Cámara Sony FX30 y DJI Osmo, iluminación básica y audio directo con micrófonos inalámbricos DJI.'],
+        ['Postproducción', 'Edición y montaje narrativo, corrección de color básica (balance de blancos y exposición), mezcla de audio y exportación por formato y plataforma.'],
+      ].map(([title, copy]) => <div key={title}><h3>{title}</h3><p>{copy}</p></div>)}</div>
     </div></section>
 
     <section id="ml-motion" className="section"><div className="section-inner">
@@ -88,11 +94,11 @@ export function MotionLeadPortfolio() {
       <Reveal><p className="eyebrow">06 / Herramientas e IA</p><h2 className="edit-title">Las herramientas<br/>correctas para cada pieza.</h2></Reveal>
       <div className="edit-skills">{[
         ['Adobe', 'After Effects (motion graphics), Premiere Pro, Illustrator, Photoshop y Audition.'],
-        ['Edición y producción', 'CapCut Pro, Final Cut Pro, Tricaster (REMI), OBS y NDI. Cámara propia: Sony FX30.'],
+        ['Edición y producción', 'CapCut Pro, Final Cut Pro, Tricaster (REMI), OBS y NDI. Equipo propio: cámara Sony FX30, DJI Osmo y micrófonos inalámbricos DJI.'],
         ['Inteligencia artificial', 'ChatGPT, Claude y Google Flow para ideación, guiones, organización y producción de contenidos.'],
       ].map(([title, copy]) => <div key={title}><h3>{title}</h3><p>{copy}</p></div>)}</div>
     </div></section>
 
-    <footer id="ml-contact" className="contact-section"><div className="section-inner contact-layout"><div><h2>TRABAJEMOS<br/>JUNTOS.</h2></div><div className="contact-details"><h3>Isaí Rodríguez Ortega</h3><p>Guadalajara, Jal.<br/>Disponible de inmediato · Híbrido en Guadalajara</p><a href="mailto:orror.isai@outlook.com">orror.isai@outlook.com</a><a href="https://www.linkedin.com/in/iro/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a className="button primary" href={CV} download>Descargar CV</a></div></div><div className="footer-line"><span>© {new Date().getFullYear()}</span><Link href="/capcut" hrefLang="en">English version</Link></div></footer>
+    <footer id="ml-contact" className="contact-section"><div className="section-inner contact-layout"><div><h2>TRABAJEMOS<br/>JUNTOS.</h2></div><div className="contact-details"><h3>Isaí Rodríguez Ortega</h3><p>Guadalajara, Jal.<br/>Disponible de inmediato · Presencial o híbrido en Guadalajara</p><a href="mailto:orror.isai@outlook.com">orror.isai@outlook.com</a><a href="https://www.linkedin.com/in/iro/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a className="button primary" href={CV} download>Descargar CV</a></div></div><div className="footer-line"><span>© {new Date().getFullYear()}</span><Link href="/capcut" hrefLang="en">English version</Link></div></footer>
   </main>;
 }
