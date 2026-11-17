@@ -177,7 +177,7 @@ export const es: CapcutContent = {
     titleA: "Ideas en movimiento.",
     titleB: "Entregas a tiempo.",
     deck: "CapCut Pro · Final Cut Pro · OBS · After Effects · Premiere Pro · Illustrator · Photoshop · IA aplicada",
-    intro: "Productor y realizador audiovisual. Creo contenido digital para campañas y redes sociales, y motion graphics. Tengo experiencia liderando equipos y revisando la calidad visual y técnica de cada pieza antes de entregarla: en TV Azteca capacité a más de 20 editores y revisé más de 20 notas por turno.",
+    intro: "Productor y realizador audiovisual. Creador de contenido digital y motion graphics para campañas y redes sociales. Tengo experiencia liderando equipos y revisando la calidad visual y técnica de cada producción.",
     watch: "Ver motion graphics",
     watchHref: "#edit-craft",
     reelAria: "Ediciones seleccionadas de HUBWELL",
