@@ -43,8 +43,8 @@ export function MotionLeadPortfolio() {
         </ul></div></div>
       <h3 className="ml-subtitle">Cómo organizo un proyecto</h3>
       <ol className="edit-workflow ml-workflow">{[
-        ['Brief y preproducción', 'Aterrizo el concepto, el guion y la logística de rodaje (locaciones, equipo y tiempos); defino entregables, responsables y fechas.'],
-        ['Rodaje y postproducción', 'Grabo con cámara, iluminación y audio directo; edito, corrijo color y mezclo audio, con revisiones intermedias.'],
+        ['Brief y preproducción', 'Aterrizo el concepto, el guion y la planeación del rodaje (equipo y tiempos); defino entregables, responsables y fechas.'],
+        ['Rodaje y postproducción', 'Grabo con cámara, iluminación y audio directo; edito, hago corrección de color básica y mezclo audio, con revisiones intermedias.'],
         ['Revisión de calidad', 'Reviso composición, color, animación, tipografía, audio y formatos antes de que salga cualquier pieza.'],
         ['Entrega y mejora', 'Entrego a tiempo, documento lo aprendido y propongo ajustes de proceso o herramientas.'],
       ].map(([title, copy], i) => <li key={title}><span>{String(i + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{copy}</p></li>)}</ol>
@@ -62,9 +62,9 @@ export function MotionLeadPortfolio() {
       </article>
       <h3 className="ml-subtitle">En rodaje</h3>
       <div className="edit-skills">{[
-        ['Preproducción', 'Guion, planeación de locaciones y logística de rodaje en estudio o exteriores.'],
+        ['Preproducción', 'Guion y planeación del rodaje en estudio o exteriores: equipo, tiempos y necesidades técnicas.'],
         ['Cámara, luz y audio', 'Cámara Sony FX30 y DJI Osmo, iluminación básica y audio directo con micrófonos inalámbricos DJI.'],
-        ['Postproducción', 'Edición y montaje narrativo, corrección de color, mezcla de audio y exportación por formato y plataforma.'],
+        ['Postproducción', 'Edición y montaje narrativo, corrección de color básica (balance de blancos y exposición), mezcla de audio y exportación por formato y plataforma.'],
       ].map(([title, copy]) => <div key={title}><h3>{title}</h3><p>{copy}</p></div>)}</div>
     </div></section>
 

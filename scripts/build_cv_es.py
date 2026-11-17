@@ -198,7 +198,7 @@ y = section(c, "Perfil", MAIN_X, y)
 y = para(c,
     "Productor y realizador audiovisual con más de 15 años en televisión, publicidad y contenido digital. "
     "Realizo de principio a fin: guion y planeación del rodaje, grabación con cámara, iluminación básica y "
-    "audio directo, y postproducción con edición, corrección de color, mezcla de audio y motion graphics en "
+    "audio directo, y postproducción con edición, corrección de color básica, mezcla de audio y motion graphics en "
     "After Effects. En TV Azteca formé parte del equipo de producción remota de seis noticieros estatales, "
     "revisé la calidad de más de 20 notas por turno y capacité a más de 20 editores.",
     MAIN_X, y, MAIN_R - MAIN_X) - 8
@@ -221,7 +221,6 @@ y -= 4
 y = job(c, "Editor de video y productor audiovisual independiente", "Proyectos independientes  |  sep 2026 – actual", y)
 for parts in [
     [("HUBWELL Logistics: ", True), ("produzco en locación y edito reels 9:16 de 60–90 s en CapCut Pro, con texto animado, overlays, efectos de IA y la identidad de la marca.", False)],
-    [("AALATAM", True), (" (agencia y casa productora): grabé y edité un reel 9:16 para Meta.", False)],
     [("Tlajtoli 2026", True), (" (CEDSPI, Gobierno de Hidalgo): dirección de transmisión de 90 min con dos cámaras, cápsula institucional y reel.", False)],
 ]:
     y = bullet(c, parts, y)
@@ -244,9 +243,9 @@ sw = SIDE_R - SIDE_X
 y = H - HEADER_H - 26
 y = section(c, "Realización", SIDE_X, y)
 for title, body in [
-    ("Preproducción", "Guion, planeación de locaciones y logística de rodaje."),
+    ("Preproducción", "Guion y planeación del rodaje: equipo, tiempos y necesidades técnicas."),
     ("Rodaje", "Cámara (Sony FX30, DJI Osmo), iluminación básica y audio directo con micrófonos inalámbricos DJI."),
-    ("Postproducción", "Edición y montaje narrativo, corrección de color (Lumetri), mezcla de audio y exportación por plataforma, 16:9 y 9:16."),
+    ("Postproducción", "Edición y montaje narrativo, corrección de color básica en Lumetri (balance de blancos y exposición), mezcla de audio y exportación por plataforma, 16:9 y 9:16."),
     ("Motion graphics", "Texto animado, plecas, overlays, keyframes, máscaras y tracking en After Effects."),
     ("Coordinación", "Prioridades y fechas de entrega, revisión de calidad y capacitación."),
 ]:
