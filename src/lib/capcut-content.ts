@@ -183,7 +183,7 @@ export const es: CapcutContent = {
     reelAria: "Ediciones seleccionadas de HUBWELL",
     reelThumb: "Miniatura de HUBWELL, {label}",
     reelItem: "Ed.",
-    availability: "Guadalajara, Jal. · Disponible de inmediato · Híbrido en Guadalajara",
+    availability: "Guadalajara, Jal. · Disponible de inmediato · Presencial o híbrido en Guadalajara",
   },
   proof: [
     ["20+", "Editores capacitados en TV Azteca"],
