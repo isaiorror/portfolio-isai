@@ -23,3 +23,15 @@
 .ml-portfolio .edit-field-assignment+.edit-field-assignment{margin-top:60px}
 @media(max-width:900px){.ml-workflow{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.ml-motion-grid,.ml-yt-grid,.ml-workflow{grid-template-columns:1fr}}
+/* Hero /es: loop de motion graphics (scripts/hero_motion.py) en lugar de foto + titular */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.ml-hero{min-height:0;display:block;padding-top:68px;background:#07090b}
+.hero-motion{position:relative;background:#07090b}
+.hero-motion video{display:block;width:100%;height:min(56.25vw,calc(100svh - 68px - 120px));min-height:300px;object-fit:contain;background:#07090b}
+.hero-motion-toggle{position:absolute;right:max(12px,2vw);top:12px;width:36px;height:36px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.3);background:rgba(7,9,11,.7);color:#fff;font:600 11px/1 var(--font-geist-mono);cursor:pointer;opacity:.7;transition:opacity .2s,border-color .2s}
+.hero-motion-toggle:hover,.hero-motion-toggle:focus-visible{opacity:1;border-color:var(--orange)}
+.ml-hero .ml-hero-copy{max-width:none;display:grid;grid-template-columns:1.1fr .9fr;gap:24px 60px;align-items:end;padding:36px 6vw 44px;border-top:1px solid var(--line)}
+.ml-hero .edit-deck{margin:0 0 12px}.ml-hero .edit-intro{margin:0;max-width:640px}.ml-hero .hero-actions{margin-top:0}.ml-hero .edit-availability{margin:18px 0 0}
+@media(max-width:900px){.ml-hero .ml-hero-copy{grid-template-columns:1fr}}
+@media(max-width:700px){.ml-hero{padding-top:60px}.hero-motion video{height:auto;min-height:0;aspect-ratio:4/5;max-height:calc(100svh - 60px)}}
+@media(max-width:600px){.ml-hero .ml-hero-copy{padding:28px 22px 40px}}

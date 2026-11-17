@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Reveal } from '@/components/reveal';
+import { HeroMotion } from '@/components/hero-motion';
 import { Video } from '@/components/editing-portfolio';
 import { es as t } from '@/lib/capcut-content';
 
@@ -22,10 +23,12 @@ export function MotionLeadPortfolio() {
     <a href="#ml-motion" className="skip-link">Ir a motion graphics</a>
     <header className="site-header"><nav aria-label="Navegación del portafolio"><a href="#ml-motion">Motion</a><a href="#ml-lead">Coordinación</a><a href="#ml-campaigns">Campañas</a><a href="#ml-tools">Herramientas</a><a href="#ml-contact">Contacto</a></nav><Link className="edit-lang" href="/capcut" hrefLang="en" aria-label="English version">EN</Link><a className="edit-cv" href={CV} download>Descargar CV ↗</a></header>
 
-    <section id="ml-top" className="edit-hero">
-      <Image src="/CNP%203.jpg" alt={t.hero.photoAlt} fill priority sizes="100vw" className="edit-hero-photo" />
-      <div className="edit-hero-overlay" />
-      <div className="edit-hero-copy"><p className="eyebrow">{t.hero.eyebrow}</p><h1>{t.hero.titleA}<br/><span>{t.hero.titleB}</span></h1><p className="edit-deck">{t.hero.deck}</p><p className="edit-intro">{t.hero.intro}</p><div className="hero-actions"><a className="button primary" href="#ml-motion">Ver motion graphics</a><a className="button secondary" href={CV} download>Descargar CV</a></div><p className="edit-availability">{t.hero.availability}</p></div>
+    <section id="ml-top" className="edit-hero ml-hero">
+      <HeroMotion pauseLabel="Pausar animación" playLabel="Reproducir animación" />
+      <div className="edit-hero-copy ml-hero-copy">
+        <div><h1 className="sr-only">Isaí Rodríguez Ortega. Motion graphics y video: edición remota, producción en campo con IA, broadcast en vivo y motion graphics.</h1><p className="edit-deck">{t.hero.deck}</p><p className="edit-intro">{t.hero.intro}</p></div>
+        <div><div className="hero-actions"><a className="button primary" href="#ml-motion">Ver motion graphics</a><a className="button secondary" href={CV} download>Descargar CV</a></div><p className="edit-availability">{t.hero.availability}</p></div>
+      </div>
     </section>
     <div className="edit-proof">{t.proof.map(([value, label]) => <div key={value}><strong>{value}</strong><span>{label}</span></div>)}</div>
 
