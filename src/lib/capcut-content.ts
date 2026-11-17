@@ -187,8 +187,8 @@ export const es: CapcutContent = {
   },
   proof: [
     ["20+", "Editores capacitados en TV Azteca"],
-    ["6", "Noticieros estatales al aire a la vez, en producción remota"],
-    ["15+ años", "De producción audiovisual, edición y motion"],
+    ["6", "Noticieros estatales al aire apoyados de producción remota"],
+    ["15+ años", "De producción audiovisual, edición y motion graphics"],
   ],
   work: {
     eyebrow: "01 / Trabajos seleccionados",
