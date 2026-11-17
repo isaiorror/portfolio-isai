@@ -53,7 +53,7 @@ export const mlEs: MotionLeadContent = {
   heroLabels: { pause: 'Pausar animación', play: 'Reproducir animación', soundOn: 'Activar sonido', soundOff: 'Silenciar' },
   orbit: { open: 'Abrir video ↗', youtube: 'Ver en YouTube ↗', soundOn: 'Activar sonido', soundOff: 'Silenciar', prev: 'Video anterior', next: 'Video siguiente', play: 'Reproducir' },
   hero: {
-    srTitle: 'Isaí Rodríguez Ortega. Motion graphics y video: edición no lineal, producción en campo, IA integrada al flujo de trabajo, broadcast en vivo y motion graphics.',
+    srTitle: 'Isaí Rodríguez Ortega. Motion graphics y video: edición no lineal, producción en campo, IA + workflow, broadcast en vivo y motion graphics.',
     intro: capcutEs.hero.intro,
     tools: [...tools, 'IA aplicada'],
     toolsAria: 'Herramientas',
@@ -146,7 +146,7 @@ export const mlEn: MotionLeadContent = {
   heroLabels: { pause: 'Pause animation', play: 'Play animation', soundOn: 'Turn sound on', soundOff: 'Mute' },
   orbit: { open: 'Open video ↗', youtube: 'Watch on YouTube ↗', soundOn: 'Turn sound on', soundOff: 'Mute', prev: 'Previous video', next: 'Next video', play: 'Play' },
   hero: {
-    srTitle: 'Isaí Rodríguez Ortega. Motion graphics and video: non-linear editing, field production, AI-integrated workflows, live broadcast and motion graphics.',
+    srTitle: 'Isaí Rodríguez Ortega. Motion graphics and video: non-linear editing, field production, AI + workflow, live broadcast and motion graphics.',
     intro: 'Audiovisual producer and director. I create digital content and motion graphics for campaigns and social media, with experience leading teams and reviewing the visual and technical quality of every production.',
     tools: [...tools, 'Applied AI'],
     toolsAria: 'Tools',
