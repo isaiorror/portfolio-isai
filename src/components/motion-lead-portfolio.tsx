@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Reveal } from '@/components/reveal';
 import { HeroMotion } from '@/components/hero-motion';
+import { OrbitReel } from '@/components/orbit-reel';
 import { Video } from '@/components/editing-portfolio';
 import { es as t } from '@/lib/capcut-content';
 
@@ -81,7 +82,7 @@ export function MotionLeadPortfolio() {
 
     <section id="ml-campaigns" className="section"><div className="section-inner">
       <Reveal><p className="eyebrow">04 / Campañas y redes</p><h2 className="edit-title">Marcas en formato<br/>vertical.</h2></Reveal>
-      <article id="hubwell" className="edit-case edit-case-hubwell"><div><p className="eyebrow">{t.hubwell.eyebrow}</p><h3>{t.hubwell.titleA}<br/>{t.hubwell.titleB}</h3><p>{t.hubwell.body} <a className="edit-inline-link" href="https://www.instagram.com/hubwell.mx/reels/" target="_blank" rel="noreferrer">{t.hubwell.instagram}</a></p><dl className="edit-facts">{t.hubwell.facts.map(([dt, dd]) => <div key={dt}><dt>{dt}</dt><dd>{dd}</dd></div>)}</dl><ul>{t.hubwell.bullets.map((b) => <li key={b}>{b}</li>)}</ul></div><div className="edit-video-duo">{['/hubwell-01.mp4', '/hubwell-02.mp4', '/hubwell_3.mov'].map((src, i) => <Video key={src} src={src} label={t.hubwell.labels[i]} t={t} vertical/>)}</div></article>
+      <article id="hubwell" className="edit-case edit-case-hubwell"><div><p className="eyebrow">{t.hubwell.eyebrow}</p><h3>{t.hubwell.titleA}<br/>{t.hubwell.titleB}</h3><p>{t.hubwell.body} <a className="edit-inline-link" href="https://www.instagram.com/hubwell.mx/reels/" target="_blank" rel="noreferrer">{t.hubwell.instagram}</a></p><dl className="edit-facts">{t.hubwell.facts.map(([dt, dd]) => <div key={dt}><dt>{dt}</dt><dd>{dd}</dd></div>)}</dl><ul>{t.hubwell.bullets.map((b) => <li key={b}>{b}</li>)}</ul></div><OrbitReel items={['/hubwell-01.mp4', '/hubwell-02.mp4', '/hubwell_3.mov'].map((src, i) => ({ src, label: t.hubwell.labels[i] }))} openLabel="Abrir video ↗" soundOn="Activar sonido" soundOff="Silenciar" prevLabel="Video anterior" nextLabel="Video siguiente" aria="Ediciones seleccionadas de HUBWELL" /></article>
       <article className="edit-case edit-case-ad"><div><p className="eyebrow">{t.aalatam.eyebrow}</p><h3>{t.aalatam.titleA}<br/>{t.aalatam.titleB}</h3><p>{t.aalatam.body}</p><dl className="edit-facts">{t.aalatam.facts.map(([dt, dd]) => <div key={dt}><dt>{dt}</dt><dd>{dd}</dd></div>)}</dl></div><Video src="/AALATAM%20V4.mp4" label={t.aalatam.label} t={t} vertical/></article>
     </div></section>
 
