@@ -232,7 +232,8 @@ y = bullet(c, "Guion, grabación y edición de videos corporativos y comerciales
 y = job(c, "Productor de noticiero deportivo y editor", "Teleportal (antes Laya Comunica)  |  2006 – 2008", y)
 y = bullet(c, "Produje un noticiero deportivo y edité programación general. Editor externo y productor comercial para TV Azteca Hidalgo.", y) - 3
 y = job(c, "Planeación de materiales y demanda", "Bombardier Transportation  |  2009 – 2010", y)
-y = bullet(c, "Video corporativo y fotografía para comunicación interna; trabajo en inglés con equipos en Canadá.", y)
+y = bullet(c, "Puesto principal: planeación de materiales y demanda, en inglés con equipos en Canadá.", y)
+y = bullet(c, "Actividad extra, fuera del horario laboral: produje video corporativo y fotografía para comunicación interna.", y)
 
 c.setFillColor(MUTED)
 c.setFont("Sans", 7)
@@ -260,7 +261,7 @@ for title, items in [
     ("Adobe", ["Premiere Pro", "After Effects", "Photoshop", "Illustrator", "Audition"]),
     ("Edición", ["CapCut Pro", "Final Cut Pro"]),
     ("Producción", ["Sony FX30", "DJI Osmo", "Micrófonos DJI", "Tricaster (REMI)", "OBS"]),
-    ("Inteligencia artificial", ["ChatGPT", "Claude", "Google Flow"]),
+    ("Inteligencia artificial", ["ChatGPT", "Claude", "Google Flow", "Higgsfield"]),
 ]:
     c.setFillColor(INK)
     c.setFont("Sans-Bold", 8.6)
