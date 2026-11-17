@@ -26,7 +26,7 @@ export function MotionLeadPortfolio() {
     <section id="ml-top" className="edit-hero ml-hero">
       <HeroMotion pauseLabel="Pausar animación" playLabel="Reproducir animación" />
       <div className="edit-hero-copy ml-hero-copy">
-        <div><h1 className="sr-only">Isaí Rodríguez Ortega. Motion graphics y video: edición remota, producción en campo con IA, broadcast en vivo y motion graphics.</h1><p className="edit-deck">{t.hero.deck}</p><p className="edit-intro">{t.hero.intro}</p></div>
+        <div><h1 className="sr-only">Isaí Rodríguez Ortega. Motion graphics y video: edición remota, producción en campo con IA, broadcast en vivo y motion graphics.</h1><p className="edit-intro">{t.hero.intro}</p><ul className="ml-hero-tools" aria-label="Herramientas">{t.hero.deck.split(' · ').map((tool) => <li key={tool}>{tool}</li>)}</ul></div>
         <div><div className="hero-actions"><a className="button primary" href="#ml-motion">Ver motion graphics</a><a className="button secondary" href={CV} download>Descargar CV</a></div><p className="edit-availability">{t.hero.availability}</p></div>
       </div>
     </section>

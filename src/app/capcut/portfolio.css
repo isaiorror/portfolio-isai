@@ -35,3 +35,5 @@
 @media(max-width:900px){.ml-hero .ml-hero-copy{grid-template-columns:1fr}}
 @media(max-width:700px){.ml-hero{padding-top:60px}.hero-motion video{height:auto;min-height:0;aspect-ratio:4/5;max-height:calc(100svh - 60px)}}
 @media(max-width:600px){.ml-hero .ml-hero-copy{padding:28px 22px 40px}}
+.ml-hero-tools{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0}.ml-hero-tools li{border:1px solid var(--line);padding:7px 10px;font:600 10px/1 var(--font-geist-mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.ml-hero .edit-intro{font-size:17px;color:rgba(255,255,255,.82)}
