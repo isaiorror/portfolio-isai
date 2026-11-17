@@ -6,7 +6,8 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 // Flechas, teclado, clic en una tarjeta o arrastrar para girar. Con "reducir movimiento" no hay giro automático.
 type Item = { src: string; label: string };
 
-const AUTO_MS = 5000;
+const AUTO_MS = 7000; // pausa entre giros
+const GIRO_MS = 2200; // duración de cada giro
 
 export function OrbitReel({ items, openLabel, soundOn, soundOff, prevLabel, nextLabel, aria }: {
   items: Item[]; openLabel: string; soundOn: string; soundOff: string; prevLabel: string; nextLabel: string; aria: string;
@@ -42,16 +43,19 @@ export function OrbitReel({ items, openLabel, soundOn, soundOff, prevLabel, next
     });
   }, [n]);
 
-  // Anima el ángulo sobre el círculo hasta el destino
+  // Anima el ángulo sobre el círculo hasta el destino, con entrada y salida suaves
   useEffect(() => {
     cancelAnimationFrame(raf.current);
     const destino = turn;
     if (reduced.current) { angle.current = destino; layout(); return; }
-    const tick = () => {
-      const d = destino - angle.current;
-      angle.current = Math.abs(d) < 0.001 ? destino : angle.current + d * 0.09;
+    const desde = angle.current;
+    const t0 = performance.now();
+    const ease = (x: number) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+    const tick = (now: number) => {
+      const p = Math.min(1, (now - t0) / GIRO_MS);
+      angle.current = desde + (destino - desde) * ease(p);
       layout();
-      if (angle.current !== destino) raf.current = requestAnimationFrame(tick);
+      if (p < 1) raf.current = requestAnimationFrame(tick);
     };
     raf.current = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf.current);

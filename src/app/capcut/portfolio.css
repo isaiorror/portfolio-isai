@@ -64,3 +64,6 @@
 .orbit-dots button[aria-current="true"]{background:var(--orange)}
 .edit-case-hubwell .orbit{grid-column:1/-1}
 @media(max-width:700px){.orbit-stage{height:min(560px,128vw)}.orbit-card{width:min(52vw,230px);top:45%}.orbit-ring{top:84%;height:70px;width:92%}.orbit-bar{grid-template-columns:auto 1fr auto;gap:12px}.orbit-dots{display:none}}
+.ml-case-text{grid-template-columns:1fr}.ml-case-text>div{display:grid;grid-template-columns:1fr 1fr;gap:10px 60px;align-items:start}.ml-case-text>div>.edit-facts{grid-column:2;grid-row:1/span 3;margin:0}
+.ml-orbit-wrap{margin-top:50px;padding-top:40px;border-top:1px solid var(--line)}
+@media(max-width:900px){.ml-case-text>div{grid-template-columns:1fr}.ml-case-text>div>.edit-facts{grid-column:1;grid-row:auto;margin:20px 0}}
