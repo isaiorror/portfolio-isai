@@ -260,6 +260,7 @@ def guardar_wav(ruta, x):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--carpeta", default="public/hero-motion")
+    ap.add_argument("--prefijo", default="hero", help='"hero-en" para la versión en inglés')
     args = ap.parse_args()
     if not shutil.which("ffmpeg"):
         sys.exit("Falta ffmpeg en el PATH")
@@ -268,7 +269,7 @@ def main():
     guardar_wav(wav, componer())
     for fmt in ("16x9", "4x5"):
         for ext, codec in (("mp4", ["-c:a", "aac", "-b:a", "128k"]), ("webm", ["-c:a", "libopus", "-b:a", "96k"])):
-            vid = carpeta / f"hero-{fmt}.{ext}"
+            vid = carpeta / f"{args.prefijo}-{fmt}.{ext}"
             tmp = carpeta / f"tmp-{fmt}.{ext}"
             cmd = ["ffmpeg", "-y", "-v", "error", "-i", str(vid), "-i", str(wav), "-map", "0:v:0", "-map", "1:a:0",
                    "-c:v", "copy", *codec, "-t", str(DUR), "-shortest"]
