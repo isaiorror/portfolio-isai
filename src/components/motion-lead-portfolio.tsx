@@ -23,7 +23,7 @@ const corporate = [
 export function MotionLeadPortfolio() {
   return <main className="edit-portfolio ml-portfolio site-shell" lang="es">
     <a href="#ml-motion" className="skip-link">Ir a motion graphics</a>
-    <header className="site-header"><nav aria-label="Navegación del portafolio"><a href="#ml-lead">Coordinación</a><a href="#ml-field">Campo</a><a href="#ml-motion">Motion</a><a href="#ml-campaigns">Campañas</a><a href="#ml-tools">Herramientas</a><a href="#ml-contact">Contacto</a></nav><Link className="edit-lang" href="/capcut" hrefLang="en" aria-label="English version">EN</Link><a className="edit-cv" href={CV} download>Descargar CV ↗</a></header>
+    <header className="site-header"><nav aria-label="Navegación del portafolio"><a href="#ml-campaigns">Campañas</a><a href="#ml-lead">Coordinación</a><a href="#ml-field">Campo</a><a href="#ml-motion">Motion</a><a href="#ml-tools">Herramientas</a><a href="#ml-contact">Contacto</a></nav><Link className="edit-lang" href="/capcut" hrefLang="en" aria-label="English version">EN</Link><a className="edit-cv" href={CV} download>Descargar CV ↗</a></header>
 
     <section id="ml-top" className="edit-hero ml-hero">
       <HeroMotion pauseLabel="Pausar animación" playLabel="Reproducir animación" soundOnLabel="Activar sonido" soundOffLabel="Silenciar" />
@@ -34,8 +34,15 @@ export function MotionLeadPortfolio() {
     </section>
     <div className="edit-proof">{t.proof.map(([value, label]) => <div key={value}><strong>{value}</strong><span>{label}</span></div>)}</div>
 
+    <section id="ml-campaigns" className="section"><div className="section-inner">
+      <Reveal><p className="eyebrow">01 / Campañas y redes</p><h2 className="edit-title">Marcas en formato<br/>vertical.</h2></Reveal>
+      <article id="hubwell" className="edit-case edit-case-hubwell"><div><p className="eyebrow">{t.hubwell.eyebrow}</p><h3>{t.hubwell.titleA}<br/>{t.hubwell.titleB}</h3><p>{t.hubwell.body} <a className="edit-inline-link" href="https://www.instagram.com/hubwell.mx/reels/" target="_blank" rel="noreferrer">{t.hubwell.instagram}</a></p><dl className="edit-facts">{t.hubwell.facts.map(([dt, dd]) => <div key={dt}><dt>{dt}</dt><dd>{dd}</dd></div>)}</dl><ul>{t.hubwell.bullets.map((b) => <li key={b}>{b}</li>)}</ul></div></article>
+      <article className="edit-case edit-case-ad ml-case-text"><div><p className="eyebrow">{t.aalatam.eyebrow}</p><h3>{t.aalatam.titleA}<br/>{t.aalatam.titleB}</h3><p>{t.aalatam.body}</p><dl className="edit-facts">{t.aalatam.facts.map(([dt, dd]) => <div key={dt}><dt>{dt}</dt><dd>{dd}</dd></div>)}</dl></div></article>
+      <div className="ml-orbit-wrap"><OrbitReel items={[...['/hubwell-01.mp4', '/hubwell-02.mp4', '/hubwell_3.mov'].map((src, i) => ({ src, label: t.hubwell.labels[i] })), { src: '/AALATAM%20V4.mp4', label: t.aalatam.label }]} aria="Videos verticales para campañas y redes" labels={orbitLabels} /></div>
+    </div></section>
+
     <section id="ml-lead" className="section ml-lead"><div className="section-inner">
-      <Reveal><p className="eyebrow">01 / Coordinación y liderazgo</p><h2 className="edit-title">Equipos que entregan<br/>a tiempo, todos los días.</h2><p className="edit-summary">En la televisión en vivo no hay segunda oportunidad. Ahí aprendí a organizar prioridades, revisar calidad bajo presión y formar a otros editores.</p></Reveal>
+      <Reveal><p className="eyebrow">02 / Coordinación y liderazgo</p><h2 className="edit-title">Equipos que entregan<br/>a tiempo, todos los días.</h2><p className="edit-summary">En la televisión en vivo no hay segunda oportunidad. Ahí aprendí a organizar prioridades, revisar calidad bajo presión y formar a otros editores.</p></Reveal>
       <div className="edit-background"><Video src="/tricaster_2_web.mp4" label="TV Azteca / Producción remota con Tricaster" t={t}/><div><h3>TV Azteca / CNP Jalisco</h3><p className="eyebrow">Febrero 2021 – agosto 2026 · Editor → Productor de noticias locales</p>
         <ul className="ml-list">
           <li>Formé parte del equipo que operaba desde Guadalajara la producción de forma remota (REMI) de <b>seis noticieros estatales de 30 minutos</b>, con salida al aire de lunes a viernes de 14:30 a 15:00 horas.</li>
@@ -53,7 +60,7 @@ export function MotionLeadPortfolio() {
     </div></section>
 
     <section id="ml-field" className="section"><div className="section-inner">
-      <Reveal><p className="eyebrow">02 / Producción en campo y eventos</p><h2 className="edit-title">Cuando el proyecto<br/>sale del estudio.</h2></Reveal>
+      <Reveal><p className="eyebrow">03 / Producción en campo y eventos</p><h2 className="edit-title">Cuando el proyecto<br/>sale del estudio.</h2></Reveal>
       <article className="edit-background edit-field-assignment">
         <div className="edit-assignment-media"><Image src="/VARIAS%20CANCUN.jpeg" alt={t.tv.costaPhotoAlt} width={1000} height={700}/><Video src="/kantunilkin_2_web.mp4" label={t.tv.costaLabel} t={t}/></div>
         <div><p className="eyebrow">{t.tv.costaEyebrow}</p><h3>Editor y realizador</h3>{t.tv.costaBody.map((p) => <p key={p}>{p}</p>)}</div>
@@ -71,7 +78,7 @@ export function MotionLeadPortfolio() {
     </div></section>
 
     <section id="ml-motion" className="section"><div className="section-inner">
-      <Reveal><p className="eyebrow">03 / Motion graphics</p><h2 className="edit-title">Movimiento con<br/>intención.</h2><p className="edit-summary">Cortinillas y transiciones animadas. Cada pieza tiene que leerse rápido, sostener la identidad y dar ritmo a la edición.</p></Reveal>
+      <Reveal><p className="eyebrow">04 / Motion graphics</p><h2 className="edit-title">Movimiento con<br/>intención.</h2><p className="edit-summary">Cortinillas y transiciones animadas. Cada pieza tiene que leerse rápido, sostener la identidad y dar ritmo a la edición.</p></Reveal>
       <div className="ml-motion-grid"><Video src="/cortinilla-01.mp4" label="Motion / Cortinilla 01" t={t}/><Video src="/cortinilla-02.mp4" label="Motion / Cortinilla 02" t={t}/></div>
       <div className="edit-skills">{[
         ['Animación y texto', 'Texto animado, keyframes, máscaras, tracking, overlays y transiciones.'],
@@ -79,13 +86,6 @@ export function MotionLeadPortfolio() {
         ['Storytelling', 'Ritmo, composición y jerarquía visual al servicio del mensaje de la marca.'],
       ].map(([title, copy]) => <div key={title}><h3>{title}</h3><p>{copy}</p></div>)}</div>
       <div className="tag-list"><span>After Effects</span><span>Premiere Pro</span><span>Illustrator</span><span>Photoshop</span><span>Audition</span></div>
-    </div></section>
-
-    <section id="ml-campaigns" className="section"><div className="section-inner">
-      <Reveal><p className="eyebrow">04 / Campañas y redes</p><h2 className="edit-title">Marcas en formato<br/>vertical.</h2></Reveal>
-      <article id="hubwell" className="edit-case edit-case-hubwell"><div><p className="eyebrow">{t.hubwell.eyebrow}</p><h3>{t.hubwell.titleA}<br/>{t.hubwell.titleB}</h3><p>{t.hubwell.body} <a className="edit-inline-link" href="https://www.instagram.com/hubwell.mx/reels/" target="_blank" rel="noreferrer">{t.hubwell.instagram}</a></p><dl className="edit-facts">{t.hubwell.facts.map(([dt, dd]) => <div key={dt}><dt>{dt}</dt><dd>{dd}</dd></div>)}</dl><ul>{t.hubwell.bullets.map((b) => <li key={b}>{b}</li>)}</ul></div></article>
-      <article className="edit-case edit-case-ad ml-case-text"><div><p className="eyebrow">{t.aalatam.eyebrow}</p><h3>{t.aalatam.titleA}<br/>{t.aalatam.titleB}</h3><p>{t.aalatam.body}</p><dl className="edit-facts">{t.aalatam.facts.map(([dt, dd]) => <div key={dt}><dt>{dt}</dt><dd>{dd}</dd></div>)}</dl></div></article>
-      <div className="ml-orbit-wrap"><OrbitReel items={[...['/hubwell-01.mp4', '/hubwell-02.mp4', '/hubwell_3.mov'].map((src, i) => ({ src, label: t.hubwell.labels[i] })), { src: '/AALATAM%20V4.mp4', label: t.aalatam.label }]} aria="Videos verticales para campañas y redes" labels={orbitLabels} /></div>
     </div></section>
 
     <section id="ml-corporate" className="section"><div className="section-inner">
