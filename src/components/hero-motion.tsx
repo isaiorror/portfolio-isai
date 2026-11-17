@@ -4,11 +4,11 @@ import { useEffect, useRef, useState } from 'react';
 // Loop de motion graphics del hero (12 s). Video con scripts/hero_motion.py y música/efectos con scripts/hero_audio.py.
 // Arranca en silencio (los navegadores bloquean el autoplay con sonido); el botón de sonido lo activa.
 // 16:9 en escritorio y 4:5 en celular. Con "reducir movimiento" se queda en la imagen fija.
-const BASE = '/hero-motion/hero';
+const DEFAULT_BASE = '/hero-motion/hero';
 const MOBILE = '(max-width: 700px)';
 
-export function HeroMotion({ pauseLabel, playLabel, soundOnLabel, soundOffLabel }: {
-  pauseLabel: string; playLabel: string; soundOnLabel: string; soundOffLabel: string;
+export function HeroMotion({ base = DEFAULT_BASE, pauseLabel, playLabel, soundOnLabel, soundOffLabel }: {
+  base?: string; pauseLabel: string; playLabel: string; soundOnLabel: string; soundOffLabel: string;
 }) {
   const ref = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
@@ -18,10 +18,10 @@ export function HeroMotion({ pauseLabel, playLabel, soundOnLabel, soundOffLabel 
     const video = ref.current;
     if (!video) return;
     const mobile = window.matchMedia(MOBILE).matches;
-    video.poster = `${BASE}-${mobile ? '4x5' : '16x9'}-poster.jpg`;
+    video.poster = `${base}-${mobile ? '4x5' : '16x9'}-poster.jpg`;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     video.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
-  }, []);
+  }, [base]);
 
   const toggle = () => {
     const video = ref.current;
@@ -39,11 +39,11 @@ export function HeroMotion({ pauseLabel, playLabel, soundOnLabel, soundOffLabel 
   };
 
   return <div className="hero-motion">
-    <video ref={ref} muted loop playsInline preload="auto" poster={`${BASE}-16x9-poster.jpg`} aria-hidden="true" tabIndex={-1}>
-      <source src={`${BASE}-4x5.webm`} type="video/webm" media={MOBILE} />
-      <source src={`${BASE}-4x5.mp4`} type="video/mp4" media={MOBILE} />
-      <source src={`${BASE}-16x9.webm`} type="video/webm" />
-      <source src={`${BASE}-16x9.mp4`} type="video/mp4" />
+    <video ref={ref} muted loop playsInline preload="auto" poster={`${base}-16x9-poster.jpg`} aria-hidden="true" tabIndex={-1}>
+      <source src={`${base}-4x5.webm`} type="video/webm" media={MOBILE} />
+      <source src={`${base}-4x5.mp4`} type="video/mp4" media={MOBILE} />
+      <source src={`${base}-16x9.webm`} type="video/webm" />
+      <source src={`${base}-16x9.mp4`} type="video/mp4" />
     </video>
     <button type="button" className="hero-motion-sound" onClick={toggleSound} aria-pressed={!muted}>
       <span aria-hidden="true">♪</span> {muted ? soundOnLabel : soundOffLabel}

@@ -4,6 +4,7 @@ Uso:
     python scripts/hero_motion.py --carpeta public/hero-motion   # renderiza 16:9 y 4:5 para el sitio
     python hero_motion.py --formato 16x9  # solo uno
     python hero_motion.py --frame 5.0     # exporta solo un PNG del segundo 5 (para revisar)
+    python scripts/hero_motion.py --carpeta public/hero-motion --idioma en   # versión en inglés (hero-en-*)
 
 Requisitos: Python 3, Pillow, numpy y ffmpeg en el PATH.
 Cambia textos, colores y tiempos en la sección CONFIGURACIÓN.
@@ -31,6 +32,20 @@ ROLES = [
     ("BROADCAST EN VIVO", ["BROADCAST", "EN VIVO"], ["TRICASTER", "REMI", "NDI · OBS"]),
     ("MOTION GRAPHICS", ["MOTION", "GRAPHICS"], ["AFTER EFFECTS", "ILLUSTRATOR", "PYTHON"]),
 ]
+
+# Textos en inglés (--idioma en). Mismo largo de EYEBROW para que el tecleo empate con el audio.
+TEXTOS_EN = {
+    "EYEBROW": "MOTION GRAPHICS & VIDEO",
+    "SUPER_2": "AUDIOVISUAL PRODUCER & DIRECTOR",
+    "WIPE_TXT": "FROM SET TO AIR",
+    "ROLES": [
+        ("REMOTE EDITING", ["REMOTE", "EDITING"], ["PREMIERE PRO", "CAPCUT PRO", "AUDITION"]),
+        ("FIELD PRODUCTION + AI", ["FIELD", "PRODUCTION + AI"], ["HIGGSFIELD", "GOOGLE FLOW", "SONY FX30"]),
+        ("LIVE BROADCAST", ["LIVE", "BROADCAST"], ["TRICASTER", "REMI", "NDI · OBS"]),
+        ("MOTION GRAPHICS", ["MOTION", "GRAPHICS"], ["AFTER EFFECTS", "ILLUSTRATOR", "PYTHON"]),
+    ],
+}
+PREFIJO = "hero"
 
 FORMATOS = {"16x9": (1920, 1080), "4x5": (1080, 1350)}
 FPS, DUR = 30, 12.0
@@ -175,7 +190,7 @@ def layout(W, H):
         L["nombre_tam"] = ajustar(F_BLACK, "RODRÍGUEZ", ancho_util, 230)
         L["nombre_y"] = int(H * 0.27)
         L["rol_y"] = int(H * 0.30)
-        L["rol_tam"] = min(ajustar(F_BLACK, "EN CAMPO + IA", ancho_util, 170), 170)
+        L["rol_tam"] = min(ajustar(F_BLACK, max((l for r in ROLES for l in r[1]), key=lambda l: fuente(F_BLACK, 100).getlength(l)), ancho_util, 170), 170)
         L["lt_y"] = int(H * 0.71)
         L["lt_w"] = ancho_util
         L["strip"] = (mx, int(H * 0.815), W - mx, int(H * 0.905))
@@ -446,7 +461,7 @@ def renderizar(fmt, carpeta):
     p.stdin.close()
     if p.wait() != 0:
         sys.exit("ffmpeg falló")
-    base = carpeta / f"hero-{fmt}"
+    base = carpeta / f"{PREFIJO}-{fmt}"
     # versiones web: ligeras, sin audio, faststart
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(master), "-an", "-c:v", "libx264", "-crf", "23",
                     "-preset", "veryslow", "-tune", "animation", "-profile:v", "high", "-pix_fmt", "yuv420p",
@@ -464,7 +479,12 @@ def main():
     ap.add_argument("--formato", choices=list(FORMATOS), nargs="*", default=list(FORMATOS))
     ap.add_argument("--carpeta", default=str(Path(__file__).parent))
     ap.add_argument("--frame", type=float, nargs="*")
+    ap.add_argument("--idioma", choices=["es", "en"], default="es")
     args = ap.parse_args()
+    if args.idioma == "en":  # genera hero-en-*.mp4/webm con los textos en inglés
+        global PREFIJO
+        globals().update(TEXTOS_EN)
+        PREFIJO = "hero-en"
     out = Path(args.carpeta)
     out.mkdir(parents=True, exist_ok=True)
     if args.frame:
