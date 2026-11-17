@@ -24,7 +24,7 @@ export function MotionLeadPortfolio() {
     <header className="site-header"><nav aria-label="Navegación del portafolio"><a href="#ml-lead">Coordinación</a><a href="#ml-field">Campo</a><a href="#ml-motion">Motion</a><a href="#ml-campaigns">Campañas</a><a href="#ml-tools">Herramientas</a><a href="#ml-contact">Contacto</a></nav><Link className="edit-lang" href="/capcut" hrefLang="en" aria-label="English version">EN</Link><a className="edit-cv" href={CV} download>Descargar CV ↗</a></header>
 
     <section id="ml-top" className="edit-hero ml-hero">
-      <HeroMotion pauseLabel="Pausar animación" playLabel="Reproducir animación" />
+      <HeroMotion pauseLabel="Pausar animación" playLabel="Reproducir animación" soundOnLabel="Activar sonido" soundOffLabel="Silenciar" />
       <div className="edit-hero-copy ml-hero-copy">
         <div><h1 className="sr-only">Isaí Rodríguez Ortega. Motion graphics y video: edición remota, producción en campo con IA, broadcast en vivo y motion graphics.</h1><p className="edit-intro">{t.hero.intro}</p><ul className="ml-hero-tools" aria-label="Herramientas">{t.hero.deck.split(' · ').map((tool) => <li key={tool}>{tool}</li>)}</ul></div>
         <div><div className="hero-actions"><a className="button primary" href={CV} download>Descargar CV</a></div><p className="edit-availability">{t.hero.availability}</p></div>
