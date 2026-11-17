@@ -176,7 +176,7 @@ export const es: CapcutContent = {
     eyebrow: "Isaí Rodríguez Ortega / Motion graphics y video",
     titleA: "Ideas en movimiento.",
     titleB: "Entregas a tiempo.",
-    deck: "CapCut Pro · Final Cut Pro · OBS · After Effects · Premiere Pro · Illustrator · Photoshop · IA aplicada",
+    deck: "CapCut Pro · Final Cut Pro · OBS · Tricaster · After Effects · Premiere Pro · Illustrator · Photoshop · IA aplicada",
     intro: "Productor y realizador audiovisual. Creador de contenido digital y motion graphics para campañas y redes sociales. Tengo experiencia liderando equipos y revisando la calidad visual y técnica de cada producción.",
     watch: "Ver motion graphics",
     watchHref: "#edit-craft",

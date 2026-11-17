@@ -47,8 +47,8 @@ export function MotionLeadPortfolio() {
       <Reveal><p className="eyebrow">02 / Coordinación y liderazgo</p><h2 className="edit-title">Equipos que entregan<br/>a tiempo, todos los días.</h2><p className="edit-summary">En la televisión en vivo no hay segunda oportunidad. Ahí aprendí a organizar prioridades, revisar calidad bajo presión y formar a otros editores.</p></Reveal>
       <div className="edit-background"><Video src="/tricaster_2_web.mp4" label="TV Azteca / Producción remota con Tricaster" t={t}/><div><h3>TV Azteca / CNP Jalisco</h3><p className="eyebrow">Febrero 2021 – agosto 2026 · Editor → Productor de noticias locales</p>
         <ul className="ml-list">
-          <li>Formé parte del equipo que operaba desde Guadalajara la producción remota (REMI) de <b>seis noticieros estatales de 30 minutos</b>, al aire al mismo tiempo de lunes a viernes.</li>
-          <li>Configuré el Tricaster para REMI y cuidé que cada emisión saliera en orden, a tiempo y con las pautas comerciales correctas.</li>
+          <li>Formé parte del equipo que operaba desde Guadalajara la producción de forma remota (REMI) de <b>seis noticieros estatales de 30 minutos</b>, con salida al aire de lunes a viernes de 14:30 a 15:00 horas.</li>
+          <li>Fui capacitado para configurar el Tricaster para REMI y cuidé que cada emisión saliera en orden, a tiempo y con las pautas comerciales correctas.</li>
           <li>Revisé la calidad visual y técnica de <b>más de 20 notas por turno</b>; participé en procesos asociados con una reducción aproximada del <b>70 % en errores de edición</b>, medida en bitácoras internas.</li>
           <li>Capacité a <b>más de 20 editores</b> en cinco años con documentación operativa, referencias visuales y videotutoriales.</li>
         </ul></div></div>
