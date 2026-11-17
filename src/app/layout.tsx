@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { locale } from "@/lib/locale";
+
+const title = locale === "es"
+  ? "Isaí Rodríguez Ortega | Productor audiovisual sénior y operaciones de televisión"
+  : "Isaí Rodríguez Ortega | Senior Video Producer & Broadcast Operations";
+const description = locale === "es"
+  ? "Productor audiovisual sénior con experiencia en operaciones de televisión, producción en vivo, flujos REMI, narrativa audiovisual y posproducción."
+  : "Senior Video Producer with experience in broadcast operations, live production, REMI workflows, audiovisual storytelling and post-production.";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,24 +22,24 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-isai-orpin.vercel.app"),
-  title: "Isaí Rodríguez Ortega | Senior Video Producer & Broadcast Operations",
-  description: "Senior Video Producer with experience in broadcast operations, live production, REMI workflows, audiovisual storytelling and post-production.",
+  title,
+  description,
   keywords: ["Senior Video Producer", "Broadcast Operations", "Live Production", "REMI", "Video Editor", "Technical Producer", "Guadalajara"],
   authors: [{ name: "Isaí Rodríguez Ortega" }],
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Isaí Rodríguez Ortega | Senior Video Producer & Broadcast Operations",
-    description: "Senior Video Producer with experience in broadcast operations, live production, REMI workflows, audiovisual storytelling and post-production.",
+    title,
+    description,
     url: "/",
-    siteName: "Isaí Rodríguez Ortega Portfolio",
+    siteName: locale === "es" ? "Portafolio de Isaí Rodríguez Ortega" : "Isaí Rodríguez Ortega Portfolio",
     images: ["/og.png"],
-    locale: "en_US",
+    locale: locale === "es" ? "es_MX" : "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Isaí Rodríguez Ortega | Senior Video Producer & Broadcast Operations",
-    description: "Broadcast operations, live production, REMI workflows, audiovisual storytelling and post-production.",
+    title,
+    description,
     images: ["/og.png"],
   },
 };
@@ -39,7 +47,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang={locale}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
