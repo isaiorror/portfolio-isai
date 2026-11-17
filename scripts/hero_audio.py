@@ -26,7 +26,8 @@ BEAT = 60 / BPM
 T_TECLEO = (0.55, 0.7, 23)          # inicio, duración, caracteres del eyebrow
 T_NOMBRE_IN, T_NOMBRE_OUT = 1.25, 3.3
 T_SUPER = 3.7
-T_ROLES = [4.0 + i * 1.75 for i in range(4)]
+N_ROLES = 5  # igual que len(ROLES) en hero_motion.py
+T_ROLES = [4.0 + i * 7.0 / N_ROLES for i in range(N_ROLES)]
 T_WIPE_INI, T_WIPE_MITAD = 10.85, 11.4
 
 rng = np.random.default_rng(7)
