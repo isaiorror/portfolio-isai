@@ -45,7 +45,7 @@ export function MotionLeadPortfolio() {
 
     <section id="ml-lead" className="section ml-lead"><div className="section-inner">
       <Reveal><p className="eyebrow">02 / Coordinación y liderazgo</p><h2 className="edit-title">Equipos que entregan<br/>a tiempo, todos los días.</h2><p className="edit-summary">En la televisión en vivo no hay segunda oportunidad. Ahí aprendí a organizar prioridades, revisar calidad bajo presión y formar a otros editores.</p></Reveal>
-      <div className="edit-background"><Video src="/tricaster_2.mp4" label="TV Azteca / Producción remota con Tricaster" t={t}/><div><h3>TV Azteca / CNP Jalisco</h3><p className="eyebrow">Febrero 2021 – agosto 2026 · Editor → Productor de noticias locales</p>
+      <div className="edit-background"><Video src="/tricaster_2_web.mp4" label="TV Azteca / Producción remota con Tricaster" t={t}/><div><h3>TV Azteca / CNP Jalisco</h3><p className="eyebrow">Febrero 2021 – agosto 2026 · Editor → Productor de noticias locales</p>
         <ul className="ml-list">
           <li>Formé parte del equipo que operaba desde Guadalajara la producción remota (REMI) de <b>seis noticieros estatales de 30 minutos</b>, al aire al mismo tiempo de lunes a viernes.</li>
           <li>Configuré el Tricaster para REMI y cuidé que cada emisión saliera en orden, a tiempo y con las pautas comerciales correctas.</li>
@@ -75,7 +75,7 @@ export function MotionLeadPortfolio() {
     <section id="ml-field" className="section"><div className="section-inner">
       <Reveal><p className="eyebrow">05 / Producción en campo y eventos</p><h2 className="edit-title">Cuando el proyecto<br/>sale del estudio.</h2></Reveal>
       <article className="edit-background edit-field-assignment">
-        <div className="edit-assignment-media"><Image src="/VARIAS%20CANCUN.jpeg" alt={t.tv.costaPhotoAlt} width={1000} height={700}/><Video src="/kantunilkin_2.mp4" label={t.tv.costaLabel} t={t}/></div>
+        <div className="edit-assignment-media"><Image src="/VARIAS%20CANCUN.jpeg" alt={t.tv.costaPhotoAlt} width={1000} height={700}/><Video src="/kantunilkin_2_web.mp4" label={t.tv.costaLabel} t={t}/></div>
         <div><p className="eyebrow">{t.tv.costaEyebrow}</p><h3>Editor y realizador</h3>{t.tv.costaBody.map((p) => <p key={p}>{p}</p>)}</div>
       </article>
       <article className="edit-background edit-field-assignment">
